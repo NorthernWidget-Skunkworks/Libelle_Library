@@ -86,7 +86,7 @@ float Libelle::getRoll()
   float ValX = getG(0);
   float ValY = getG(1);
   float ValZ = getG(2);
-  if(ValX == ValY && ValX == ValZ) return -9999;
+  if(ValX == ValY && ValX == ValZ) return LIBELLE_ERROR;
   return atan(ValX / sqrt(pow(ValY, 2) + pow(ValZ, 2))) * (180.0 / M_PI);
 }
 
@@ -95,7 +95,7 @@ float Libelle::getPitch()
   float ValX = getG(0);
   float ValY = getG(1);
   float ValZ = getG(2);
-  if(ValX == ValY && ValX == ValZ) return -9999;
+  if(ValX == ValY && ValX == ValZ) return LIBELLE_ERROR;
   return atan(ValY / sqrt(pow(ValX, 2) + pow(ValZ, 2))) * (180.0 / M_PI);
 }
 

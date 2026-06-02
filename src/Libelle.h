@@ -25,6 +25,10 @@ Distributed as-is; no warranty is given.
 
 enum Orientation { UP = 0, DOWN = 1 };
 
+/// Sentinel returned by getRoll() and getPitch() when the accelerometer is
+/// unresponsive (all three axes return identical values).
+constexpr float LIBELLE_ERROR = -9999.0f;
+
 class Libelle
 {
 	public:
