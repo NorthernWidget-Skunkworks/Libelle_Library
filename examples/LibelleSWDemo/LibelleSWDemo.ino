@@ -5,8 +5,10 @@ Libelle pyroUp(UP);
 
 void setup() {
 	Serial.begin(38400);
-	pyroUp.begin();
-	Serial.println("Welcome to the lepidopterarium...");
+	if (!pyroUp.begin()) {
+		Serial.println("Libelle not found. Check wiring.");
+		while (1);
+	}
 	Serial.println(pyroUp.getHeader());
 }
 
