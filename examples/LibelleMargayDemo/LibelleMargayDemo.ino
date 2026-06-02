@@ -5,7 +5,7 @@ Libelle pyroUp(UP);
 Libelle pyroDown(DOWN);
 
 String Header = "";
-uint8_t I2CVals[1] = {0x77};
+uint8_t I2CVals[2] = {0x40, 0x41};
 unsigned long UpdateRate = 60;
 
 Margay Logger(Model_1v0);
