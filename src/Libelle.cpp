@@ -22,7 +22,7 @@ Distributed as-is; no warranty is given.
 
 // ATtiny841 bridge register addresses
 static constexpr uint8_t UVA_ADR      = 0x02;
-static constexpr uint8_t UVB_ADR      = 0x06;
+static constexpr uint8_t UVB_ADR      = 0x07;
 static constexpr uint8_t ALS_ADR      = 0x0B;
 static constexpr uint8_t WHITE_ADR    = 0x0D;
 static constexpr uint8_t LUXMUL_ADR   = 0x10;
