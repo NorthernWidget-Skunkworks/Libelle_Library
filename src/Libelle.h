@@ -36,8 +36,8 @@ class Libelle
 		bool begin();
 		float getRoll();
 		float getPitch();
-		long getUVA();
-		long getUVB();
+		unsigned long getUVA();
+		unsigned long getUVB();
 		unsigned int getALS();
 		unsigned int getWhite();
 		float getLux();

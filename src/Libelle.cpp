@@ -99,17 +99,17 @@ float Libelle::getPitch()
   return atan(ValY / sqrt(pow(ValX, 2) + pow(ValZ, 2))) * (180.0 / M_PI);
 }
 
-long Libelle::getUVA()
+unsigned long Libelle::getUVA()
 {
-  long LSW = ReadWord(ADR, UVA_ADR);
-  long MSW = ReadWord(ADR, UVA_ADR + 2);
+  unsigned long LSW = ReadWord(ADR, UVA_ADR);
+  unsigned long MSW = ReadWord(ADR, UVA_ADR + 2);
   return (MSW << 16) | LSW;
 }
 
-long Libelle::getUVB()
+unsigned long Libelle::getUVB()
 {
-  long LSW = ReadWord(ADR, UVB_ADR);
-  long MSW = ReadWord(ADR, UVB_ADR + 2);
+  unsigned long LSW = ReadWord(ADR, UVB_ADR);
+  unsigned long MSW = ReadWord(ADR, UVB_ADR + 2);
   return (MSW << 16) | LSW;
 }
 
