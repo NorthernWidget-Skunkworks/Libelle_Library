@@ -2,33 +2,26 @@
   "title": "Libelle_Library",
   "description": "Arduino library for the NorthernWidget Libelle shortwave pyranometer. Measures solar radiation across six spectral bands from UV-B through short-wave infrared (~280–1700 nm), plus sensor tilt and housing temperature.",
   "upload_type": "software",
+  "license": {"id": "GPL-3.0-only"},
   "creators": [
     {
       "name": "Schulz, Bobby",
-      "orcid": "0000-0002-9272-4756"
+      "orcid": "0000-0002-9272-4756",
+      "affiliation": "Northern Widget LLC"
     },
     {
-      "name": "Wickert, Andy",
-      "affiliation": "University of Minnesota",
-      "orcid": "0000-0002-9545-3365"
+      "name": "Wickert, Andrew D.",
+      "orcid": "0000-0002-9545-3365",
+      "affiliation": "University of Minnesota, Department of Earth & Environmental Sciences"
     }
   ],
-  "license": "GPL-3.0",
   "keywords": [
+    "Arduino",
     "pyranometer",
     "solar radiation",
-    "Arduino",
     "shortwave radiation",
-    "ultraviolet",
+    "UV",
     "infrared",
-    "sensor",
-    "NorthernWidget"
-  ],
-  "related_identifiers": [
-    {
-      "identifier": "https://github.com/NorthernWidget-Skunkworks/Project-Libelle",
-      "relation": "isSupplementTo",
-      "scheme": "url"
-    }
+    "Northern Widget"
   ]
 }
