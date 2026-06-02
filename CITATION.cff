@@ -1,16 +1,30 @@
 cff-version: 1.2.0
-message: "If you use this library, please cite it as below."
+title: Libelle_Library
+message: "If you use this library, please cite it using the metadata from this file."
+type: software
 authors:
-- family-names: "Schulz"
-  given-names: "Bobby"
-  orcid: "https://orcid.org/0000-0002-9272-4756"
-- family-names: "Wickert"
-  given-names: "Andy"
-  orcid: "https://orcid.org/0000-0002-9545-3365"
-title: "Libelle_Library"
-abstract: "Arduino library for the NorthernWidget Libelle shortwave pyranometer. Measures solar radiation across six spectral bands from UV-B through short-wave infrared (~280-1700 nm), plus sensor tilt and housing temperature."
-version: 1.0.0
-doi: 10.5281/zenodo.4572352
-date-released: 2026-06-01
-url: "https://github.com/NorthernWidget-Skunkworks/Libelle_Library"
+  - family-names: Schulz
+    given-names: Bobby
+    orcid: "https://orcid.org/0000-0002-9272-4756"
+    affiliation: Northern Widget LLC
+  - family-names: Wickert
+    given-names: Andrew D.
+    orcid: "https://orcid.org/0000-0002-9545-3365"
+    affiliation: "University of Minnesota, Department of Earth & Environmental Sciences"
+repository-code: https://github.com/NorthernWidget-Skunkworks/Libelle_Library
+abstract: "Arduino library for the NorthernWidget Libelle shortwave pyranometer.
+  Measures solar radiation across six spectral bands from UV-B through short-wave
+  infrared (~280–1700 nm), plus sensor tilt and housing temperature."
+keywords:
+  - Arduino
+  - pyranometer
+  - solar radiation
+  - shortwave radiation
+  - UV
+  - infrared
+  - environmental monitoring
+  - open-source
 license: GPL-3.0
+version: 1.0.0
+date-released: '2026-06-01'
+doi: 10.5281/zenodo.4572352
