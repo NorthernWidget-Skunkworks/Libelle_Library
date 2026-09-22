@@ -1,0 +1,456 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.1 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js" dir="ltr">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>Libelle - Libelle Library</title>
+<meta name="description" content="Arduino library for the NorthernWidget Libelle shortwave pyranometer">
+
+
+  <meta name="author" content="Northern Widget">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Libelle Library">
+<meta property="og:title" content="Libelle">
+<meta property="og:url" content="https://docs.northernwidget.com/Libelle_Library/Classes/classLibelle/">
+
+
+  <meta property="og:description" content="Arduino library for the NorthernWidget Libelle shortwave pyranometer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://docs.northernwidget.com/Libelle_Library/Classes/classLibelle/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/Libelle_Library/feed.xml" type="application/atom+xml" rel="alternate" title="Libelle Library Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/Libelle_Library/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/Libelle_Library/">
+          Libelle Library
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/"
+                
+                
+              >Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <a href="/Libelle_Library/"><span class="nav__sub-title">Overview</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Classes/classLibelle/"><span class="nav__sub-title">Libelle Class</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Classes/index_classes/"><span class="nav__sub-title">Classes</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Files/index_files/"><span class="nav__sub-title">Files</span></a>
+          
+
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Libelle">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://docs.northernwidget.com/Libelle_Library/Classes/classLibelle/" itemprop="url">Libelle
+</a>
+          </h1>
+          
+
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc" aria-label="Table of contents">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#public-functions">Public Functions</a></li><li><a href="#public-functions-documentation">Public Functions Documentation</a><ul><li><a href="#function-libelle">function Libelle</a></li><li><a href="#function-begin">function begin</a></li><li><a href="#function-getroll">function getRoll</a></li><li><a href="#function-getpitch">function getPitch</a></li><li><a href="#function-getuva">function getUVA</a></li><li><a href="#function-getuvb">function getUVB</a></li><li><a href="#function-getals">function getALS</a></li><li><a href="#function-getwhite">function getWhite</a></li><li><a href="#function-getlux">function getLux</a></li><li><a href="#function-getir_short">function getIR_Short</a></li><li><a href="#function-getir_mid">function getIR_Mid</a></li><li><a href="#function-gettemp">function getTemp</a></li><li><a href="#function-getheader">function getHeader</a></li><li><a href="#function-getstring">function getString</a></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        <h2 id="public-functions">Public Functions</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-libelle">Libelle</a></strong>(Orientation orientation =UP)</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-begin">begin</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getroll">getRoll</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getpitch">getPitch</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>unsigned long</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuva">getUVA</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>unsigned long</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvb">getUVB</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>unsigned int</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getals">getALS</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>unsigned int</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getwhite">getWhite</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getlux">getLux</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-short">getIR_Short</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-mid">getIR_Mid</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-gettemp">getTemp</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>String</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getheader">getHeader</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>String</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getstring">getString</a></strong>()</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="public-functions-documentation">Public Functions Documentation</h2>
+
+<h3 id="function-libelle">function Libelle</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Libelle</span><span class="p">(</span>
+    <span class="n">Orientation</span> <span class="n">orientation</span> <span class="o">=</span><span class="n">UP</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-begin">function begin</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">begin</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getroll">function getRoll</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getRoll</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getpitch">function getPitch</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getPitch</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getuva">function getUVA</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getUVA</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getuvb">function getUVB</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getUVB</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getals">function getALS</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">getALS</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getwhite">function getWhite</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">getWhite</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getlux">function getLux</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getLux</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getir_short">function getIR_Short</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_Short</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getir_mid">function getIR_Mid</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_Mid</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-gettemp">function getTemp</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getTemp</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getheader">function getHeader</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">getHeader</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getstring">function getString</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">getString</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>Updated on 2026-09-22 at 23:10:13 +0000</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+
+  
+
+
+        
+
+
+
+      </footer>
+
+      
+
+      
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/Libelle_Library/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2026 <a href="https://docs.northernwidget.com">Libelle Library</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/Libelle_Library/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

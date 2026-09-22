@@ -1,0 +1,471 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.1 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js" dir="ltr">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>src/Libelle.h - Libelle Library</title>
+<meta name="description" content="Arduino library for the NorthernWidget Libelle shortwave pyranometer">
+
+
+  <meta name="author" content="Northern Widget">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Libelle Library">
+<meta property="og:title" content="src/Libelle.h">
+<meta property="og:url" content="https://docs.northernwidget.com/Libelle_Library/Files/Libelle_8h/">
+
+
+  <meta property="og:description" content="Arduino library for the NorthernWidget Libelle shortwave pyranometer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://docs.northernwidget.com/Libelle_Library/Files/Libelle_8h/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/Libelle_Library/feed.xml" type="application/atom+xml" rel="alternate" title="Libelle Library Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/Libelle_Library/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/Libelle_Library/">
+          Libelle Library
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/"
+                
+                
+              >Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <a href="/Libelle_Library/"><span class="nav__sub-title">Overview</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Classes/classLibelle/"><span class="nav__sub-title">Libelle Class</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Classes/index_classes/"><span class="nav__sub-title">Classes</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Files/index_files/"><span class="nav__sub-title">Files</span></a>
+          
+
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="src/Libelle.h">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://docs.northernwidget.com/Libelle_Library/Files/Libelle_8h/" itemprop="url">src/Libelle.h
+</a>
+          </h1>
+          
+
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc" aria-label="Table of contents">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#classes">Classes</a></li><li><a href="#types">Types</a></li><li><a href="#attributes">Attributes</a></li><li><a href="#types-documentation">Types Documentation</a><ul><li><a href="#enum-orientation">enum Orientation</a></li></ul></li><li><a href="#attributes-documentation">Attributes Documentation</a><ul><li><a href="#variable-libelle_error">variable LIBELLE_ERROR</a></li></ul></li><li><a href="#source-code">Source code</a></li></ul>
+            </nav>
+          </aside>
+        
+        <h2 id="classes">Classes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>class</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/">Libelle</a></strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="types">Types</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>enum</td>
+      <td><strong><a href="/Libelle_Library/Files/Libelle_8h/#enum-orientation">Orientation</a></strong> { UP = 0, DOWN = 1}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="attributes">Attributes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>constexpr float</td>
+      <td><strong><a href="/Libelle_Library/Files/Libelle_8h/#variable-libelle-error">LIBELLE_ERROR</a></strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="types-documentation">Types Documentation</h2>
+
+<h3 id="enum-orientation">enum Orientation</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Enumerator</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UP</td>
+      <td>0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DOWN</td>
+      <td>1</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="attributes-documentation">Attributes Documentation</h2>
+
+<h3 id="variable-libelle_error">variable LIBELLE_ERROR</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">constexpr</span> <span class="kt">float</span> <span class="n">LIBELLE_ERROR</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9999.0f</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Sentinel returned by getRoll() and getPitch() when the accelerometer is unresponsive (all three axes return identical values).</p>
+
+<h2 id="source-code">Source code</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/******************************************************************************
+Libelle.h
+Library for interfacing with the Libelle shortwave pyranometer
+Bobby Schulz @ Northern Widget LLC
+7/5/2018
+https://github.com/NorthernWidget-Skunkworks/Libelle_Library
+
+Measures solar radiation across six spectral bands from UV-B through
+short-wave infrared (~280-1700 nm), with tilt correction via onboard
+accelerometer.
+
+"The laws of nature are constructed in such a way as to make the universe
+as interesting as possible."
+-Freeman Dyson
+
+Distributed as-is; no warranty is given.
+******************************************************************************/</span>
+
+<span class="cp">#ifndef Libelle_h
+#define Libelle_h
+</span>
+<span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">"Wire.h"</span><span class="cp">
+#include</span> <span class="cpf">"math.h"</span><span class="cp">
+</span>
+<span class="k">enum</span> <span class="n">Orientation</span> <span class="p">{</span> <span class="n">UP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DOWN</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">};</span>
+
+<span class="k">constexpr</span> <span class="kt">float</span> <span class="n">LIBELLE_ERROR</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9999.0f</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Libelle</span>
+<span class="p">{</span>
+    <span class="nl">public:</span>
+        <span class="n">Libelle</span><span class="p">(</span><span class="n">Orientation</span> <span class="n">orientation</span> <span class="o">=</span> <span class="n">UP</span><span class="p">);</span>
+        <span class="kt">bool</span> <span class="n">begin</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="n">getRoll</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="n">getPitch</span><span class="p">();</span>
+        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getUVA</span><span class="p">();</span>
+        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getUVB</span><span class="p">();</span>
+        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">getALS</span><span class="p">();</span>
+        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">getWhite</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="n">getLux</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="n">getIR_Short</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="n">getIR_Mid</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="n">getTemp</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">getHeader</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">getString</span><span class="p">();</span>
+
+    <span class="nl">private:</span>
+        <span class="k">const</span> <span class="kt">float</span> <span class="n">LuxRes</span> <span class="o">=</span> <span class="mf">0.0036</span><span class="p">;</span>
+
+        <span class="k">const</span> <span class="kt">float</span> <span class="n">A</span> <span class="o">=</span> <span class="mf">0.003354016</span><span class="p">;</span>
+        <span class="k">const</span> <span class="kt">float</span> <span class="n">B</span> <span class="o">=</span> <span class="mf">0.0003074038</span><span class="p">;</span>
+        <span class="k">const</span> <span class="kt">float</span> <span class="n">C</span> <span class="o">=</span> <span class="mf">1.019153E-05</span><span class="p">;</span>
+        <span class="k">const</span> <span class="kt">float</span> <span class="n">D</span> <span class="o">=</span> <span class="mf">9.093712E-07</span><span class="p">;</span>
+
+        <span class="kt">uint8_t</span> <span class="n">ADR</span> <span class="o">=</span> <span class="mh">0x40</span><span class="p">;</span>
+        <span class="kt">uint8_t</span> <span class="n">Accel_ADR</span> <span class="o">=</span> <span class="mh">0x1D</span><span class="p">;</span>
+        <span class="n">Orientation</span> <span class="n">_orientation</span> <span class="o">=</span> <span class="n">UP</span><span class="p">;</span>
+        <span class="kt">bool</span> <span class="n">initAccel</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="n">getG</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Axis</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="n">TempConvert</span><span class="p">(</span><span class="kt">float</span> <span class="n">V</span><span class="p">,</span> <span class="kt">float</span> <span class="n">Vcc</span><span class="p">,</span> <span class="kt">float</span> <span class="n">R</span><span class="p">,</span> <span class="kt">float</span> <span class="n">A</span><span class="p">,</span> <span class="kt">float</span> <span class="n">B</span><span class="p">,</span> <span class="kt">float</span> <span class="n">C</span><span class="p">,</span> <span class="kt">float</span> <span class="n">D</span><span class="p">,</span> <span class="kt">float</span> <span class="n">R25</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="n">PrintAllRegs</span><span class="p">();</span>
+        <span class="kt">bool</span> <span class="n">WriteByte</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Adr</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Pos</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Val</span><span class="p">);</span>
+        <span class="kt">uint8_t</span> <span class="n">ReadByte</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Adr</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Pos</span><span class="p">);</span>
+        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">ReadWord</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Adr</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Pos</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="cp">#endif
+</span></code></pre></div></div>
+
+<hr />
+
+<p>Updated on 2026-09-22 at 23:10:13 +0000</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+
+  
+
+
+        
+
+
+
+      </footer>
+
+      
+
+      
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/Libelle_Library/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2026 <a href="https://docs.northernwidget.com">Libelle Library</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/Libelle_Library/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

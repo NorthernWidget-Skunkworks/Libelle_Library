@@ -1,0 +1,495 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.1 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js" dir="ltr">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>Libelle Library</title>
+<meta name="description" content="Arduino library for the NorthernWidget Libelle shortwave pyranometer">
+
+
+  <meta name="author" content="Northern Widget">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Libelle Library">
+<meta property="og:title" content="Libelle Library">
+<meta property="og:url" content="https://docs.northernwidget.com/Libelle_Library/">
+
+
+  <meta property="og:description" content="Arduino library for the NorthernWidget Libelle shortwave pyranometer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://docs.northernwidget.com/Libelle_Library/">
+
+
+
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+    "name": null,
+    "url": "https://docs.northernwidget.com/Libelle_Library/"
+}
+</script>
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/Libelle_Library/feed.xml" type="application/atom+xml" rel="alternate" title="Libelle Library Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/Libelle_Library/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/Libelle_Library/">
+          Libelle Library
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/"
+                
+                
+              >Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <a href="/Libelle_Library/"><span class="nav__sub-title">Overview</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Classes/classLibelle/"><span class="nav__sub-title">Libelle Class</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Classes/index_classes/"><span class="nav__sub-title">Classes</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Files/index_files/"><span class="nav__sub-title">Files</span></a>
+          
+
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+          
+
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p><a href="https://doi.org/10.5281/zenodo.4572352"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4572352.svg" alt="DOI" /></a></p>
+
+<h1 id="libelle">Libelle</h1>
+
+<p><strong>Arduino library for the NorthernWidget shortwave pyranometer</strong></p>
+
+<p><em>Libelle</em> is the German word for dragonfly — dragonflies are among the most spectrally sophisticated flyers, with up to 30 types of photoreceptors spanning ultraviolet to near-infrared. It also carries a second meaning: <em>Libelle</em> is the German word for a spirit level, a nod to the onboard accelerometer used to correct measurements for sensor tilt.</p>
+
+<p>This library interfaces with the NorthernWidget shortwave pyranometer module, which measures solar radiation across six spectral bands from UV-B through short-wave infrared (~280–1700 nm), along with sensor orientation and housing temperature.</p>
+
+<p>The longwave (thermal IR) sensor that was formerly bundled in this repository has been split into a separate companion library: <strong><a href="https://github.com/NorthernWidget-Skunkworks/Liasis_Library">Liasis</a></strong> — named after the genus of Australian water and olive pythons, which detect thermal infrared radiation through labial pit organs sensitive to ~5–30 µm.</p>
+
+<h2 id="spectral-channels">Spectral channels</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel</th>
+      <th>Sensor</th>
+      <th>Approximate range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UV-B</td>
+      <td>VEML6075</td>
+      <td>~280–315 nm</td>
+    </tr>
+    <tr>
+      <td>UV-A</td>
+      <td>VEML6075</td>
+      <td>~315–400 nm</td>
+    </tr>
+    <tr>
+      <td>Visible (ALS)</td>
+      <td>VEML6030</td>
+      <td>~400–700 nm</td>
+    </tr>
+    <tr>
+      <td>White (broadband)</td>
+      <td>VEML6030</td>
+      <td>~300–700 nm</td>
+    </tr>
+    <tr>
+      <td>Near-IR (short)</td>
+      <td>VEMD1060X01</td>
+      <td>~700–1100 nm</td>
+    </tr>
+    <tr>
+      <td>Near-IR (mid)</td>
+      <td>SD003-151-001</td>
+      <td>~1000–1700 nm</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In addition, the board reports:</p>
+
+<ul>
+  <li>Tilt (roll and pitch) via an ADXL343 MEMS accelerometer</li>
+  <li>Housing temperature via an NTC thermistor</li>
+</ul>
+
+<h2 id="hardware">Hardware</h2>
+
+<p>The shortwave module aggregates its sensors through an ATtiny841 acting as an I2C bridge. The host microcontroller communicates with a single I2C address (0x40 facing up, 0x41 facing down); the bridge handles all internal sensor communication.</p>
+
+<p>Two modules can be stacked on the same I2C bus using the orientation flag — one facing skyward and one facing the ground — for net shortwave radiation measurements.</p>
+
+<p><strong>Key ICs:</strong> VEML6075 (UV), VEML6030 (visible/lux), VEMD1060X01 (near-IR), SD003-151-001 (short-wave IR), ADXL343 (accelerometer), ADS1115 (ADC), ATtiny841 (I2C bridge)</p>
+
+<h2 id="basic-usage">Basic usage</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;Libelle.h&gt;</span><span class="cp">
+</span>
+<span class="n">Libelle</span> <span class="nf">pyroUp</span><span class="p">(</span><span class="n">UP</span><span class="p">);</span>    <span class="c1">// upward-facing module</span>
+<span class="n">Libelle</span> <span class="nf">pyroDown</span><span class="p">(</span><span class="n">DOWN</span><span class="p">);</span> <span class="c1">// downward-facing module</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">38400</span><span class="p">);</span>
+    <span class="n">pyroUp</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">pyroDown</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">pyroUp</span><span class="p">.</span><span class="n">getHeader</span><span class="p">()</span> <span class="o">+</span> <span class="n">pyroDown</span><span class="p">.</span><span class="n">getHeader</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">pyroUp</span><span class="p">.</span><span class="n">getString</span><span class="p">()</span> <span class="o">+</span> <span class="n">pyroDown</span><span class="p">.</span><span class="n">getString</span><span class="p">());</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="api">API</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Returns</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">begin()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bool</code></td>
+      <td>Initialize sensor and I2C bus; returns true on success, false if either the sensor bridge or accelerometer is unreachable; includes 2 ms settling time for accelerometer startup</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getHeader()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td>Comma-separated column names with units</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getString()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">String</code></td>
+      <td>Comma-separated measurement values</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getUVA()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">unsigned long</code></td>
+      <td>Raw UV-A counts</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getUVB()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">unsigned long</code></td>
+      <td>Raw UV-B counts</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getALS()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">unsigned int</code></td>
+      <td>Raw ambient light sensor counts</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getWhite()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">unsigned int</code></td>
+      <td>Raw broadband counts</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getLux()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td>Illuminance (lux)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getIR_Short()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td>VEMD1060X01 (~700–1100 nm) transimpedance output voltage (V); 47 kΩ feedback resistor, ADS1115 at ±4.096 V FSR</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getIR_Mid()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td>SD003-151-001 (~1000–1700 nm) transimpedance output voltage (V); 1 MΩ feedback resistor, ADS1115 at ±4.096 V FSR</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getTemp()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td>Housing temperature (°C)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getRoll()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td>Roll angle from accelerometer (degrees); uses all three axes; returns <code class="language-plaintext highlighter-rouge">LIBELLE_ERROR</code> (-9999) if the accelerometer is unresponsive</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">getPitch()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td>Pitch angle from accelerometer (degrees); uses all three axes; ADXL343 outputs at 100 Hz — readings taken less than 10 ms apart return the same sample; returns <code class="language-plaintext highlighter-rouge">LIBELLE_ERROR</code> (-9999) if the accelerometer is unresponsive</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ir-channel-units-and-calibration">IR channel units and calibration</h3>
+
+<p><code class="language-plaintext highlighter-rouge">getIR_Short()</code> and <code class="language-plaintext highlighter-rouge">getIR_Mid()</code> return the raw output voltage of the transimpedance amplifier circuit (photodiode current × feedback resistance), as read by the ADS1115 ADC. Converting to irradiance (W/m²) requires calibration against a reference pyranometer — a fixed conversion factor is not physically valid because the responsivity of each photodiode varies across its spectral range, so the effective sensitivity changes with the spectral composition of the incoming light (e.g., clear sky vs. overcast).</p>
+
+<h2 id="name-history">Name history</h2>
+
+<p>This library has been through two prior names. It began as <strong>Dyson</strong> — a reference to Freeman Dyson and the idea of a structure that follows the sun — and was subsequently renamed <strong>Monarch</strong> after the butterfly. <em>Libelle</em> is the third and current name, chosen to avoid unintended connotations while staying within the project’s tradition of naming instruments after organisms with exceptional sensory capabilities.</p>
+
+<p>The hardware project lives at <a href="https://github.com/NorthernWidget-Skunkworks/Project-Libelle">NorthernWidget-Skunkworks/Project-Libelle</a>.</p>
+
+<h2 id="license">License</h2>
+
+<p>Distributed as-is; no warranty is given.</p>
+
+<p><strong>Full API reference:</strong> https://docs.northernwidget.com/Libelle_Library/</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+
+  
+
+
+        
+
+
+
+      </footer>
+
+      
+
+      
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/Libelle_Library/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2026 <a href="https://docs.northernwidget.com">Libelle Library</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/Libelle_Library/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
