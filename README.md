@@ -86,3 +86,5 @@ The hardware project lives at [NorthernWidget-Skunkworks/Project-Libelle](https:
 ## License
 
 Distributed as-is; no warranty is given.
+
+**Full API reference:** https://docs.northernwidget.com/Libelle_Library/
