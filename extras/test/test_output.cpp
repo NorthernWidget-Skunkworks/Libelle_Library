@@ -169,7 +169,7 @@ int main() {
 
   // 11. The status line for a logger's status file.
   loadStandard();
-  { Libelle s; s.begin(); s.updateMeasurements(); char sb[260]; BufferPrint sp(sb, sizeof sb); size_t k = s.printStatus(sp); printf("[status] %zu bytes: %s\n", k, sb); }
+  { Libelle s; s.begin(); s.updateMeasurements(); char sb[320]; BufferPrint sp(sb, sizeof sb); size_t k = s.printStatus(sp); printf("[status] %zu bytes: %s\n", k, sb); }
 
   fprintf(stderr, "bus transactions total: %u\n", Wire.transactions);   // metric, not output
   return 0;

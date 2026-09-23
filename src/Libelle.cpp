@@ -477,7 +477,7 @@ size_t Libelle::printReport(Print& out)
 
 size_t Libelle::printStatus(Print& out, bool boot)
 {
-  return _dev.printSnapshot(out, chips, 4, boot);
+  return _dev.printSnapshot(out, chips, 4, boot, LIBELLE_LIBRARY_VERSION, LIBELLE_LIBRARY_COMMIT);
 }
 
 bool    Libelle::reportIsFault()   { return report().isFault(); } // the accelerometer's own fault counts too

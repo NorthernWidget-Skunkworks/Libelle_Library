@@ -28,6 +28,14 @@ Distributed as-is; no warranty is given.
 /// brought Schema 1 (Page 0, Block 0 handshake, data at 0x48-0x5D).
 #define LIBELLE_FW_MIN_PATCH 1
 
+// Build identity: this library's version (held equal to library.properties by
+// NW-Tests/version_check.py) and its build commit, set by the NW-Build wrapper from
+// git and blank in an Arduino IDE build. Both go into a logger's status file.
+#define LIBELLE_LIBRARY_VERSION "1.0.0"
+#ifndef LIBELLE_LIBRARY_COMMIT
+#define LIBELLE_LIBRARY_COMMIT ""
+#endif
+
 // Readings per updateMeasurements() are kept in static arrays of this
 // capacity (one per chip group; no heap); set<Group>Readings(n) clamps to it.
 // Override before the include to trade RAM for a longer batch. The default is
