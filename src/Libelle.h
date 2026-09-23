@@ -62,7 +62,7 @@ constexpr float LIBELLE_ERROR = NW_ERROR;
  * register map; on hardware v1 the ADXL343 accelerometer sits on the
  * controller's I2C bus and the library reads it directly.
  */
-class Libelle
+class Libelle : public NW_Sensor
 {
 	public:
 		/** @brief Default I2C addresses: NW-Device-Specification Schema 1 'L' (0x4C) facing UP; 'L' XOR 0x40 (0x0C) facing DOWN, by the solder jumper. */
@@ -229,7 +229,12 @@ class Libelle
 		/** @brief The report as one word for a note column: "VEML6075NoACK", "UnitReset"; "UnitNone" when none. */
 		String reportNote();
 		/** @brief Print one status line for a logger's status file: name, serial, versions, the last report, Pages 0-2 in hex; no newline, no acknowledge. */
-		size_t printStatus(Print& out);
+		size_t printStatus(Print& out, bool boot = false) override;
+		// --- NW_Sensor: the logger's view (Margay::watch) ---
+		const char* name() const override { return "Libelle"; }
+		bool reportIsFault() override;
+		uint8_t bootReportKind() override;
+		void clearBootReport() override;
 		/** @brief Why the last begin() refused, as one word: "NoACK", "NotSchema1", "WrongName", "OldFirmware", "NoAccel"; "None" after success. */
 		String beginFailure();
 		uint8_t getHardwareMajor();
