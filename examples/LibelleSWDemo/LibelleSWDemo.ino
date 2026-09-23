@@ -7,7 +7,7 @@ void setup() {
 	Serial.begin(38400);
 	if (!pyroUp.begin()) {
 		Serial.print("Libelle not found: ");
-		Serial.println(pyroUp.beginFailure());  // NoACK, NotSchema1, WrongName, OldFirmware, NoAccel
+		Serial.println(pyroUp.beginFailure());  // NotAnswering, NotSchema1, WrongName, OldFirmware, NoAccel
 		while (1);
 	}
 	Serial.println(pyroUp.getHeader());

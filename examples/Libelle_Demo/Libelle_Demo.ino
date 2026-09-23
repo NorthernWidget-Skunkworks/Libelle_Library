@@ -9,7 +9,7 @@ void setup() {
 
     if (!pyro.begin()) {
         Serial.print("Libelle not found: ");
-        Serial.println(pyro.beginFailure());  // NoACK, NotSchema1, WrongName, OldFirmware, NoAccel
+        Serial.println(pyro.beginFailure());  // NotAnswering, NotSchema1, WrongName, OldFirmware, NoAccel
         while (1);
     }
 
@@ -19,7 +19,7 @@ void setup() {
 void loop() {
     Serial.println(pyro.getString());  // -9999 where a reading failed
     if (pyro.anyFault()) {
-        pyro.printReport(Serial);  // e.g. "VEML6075: no acknowledge"
+        pyro.printReport(Serial);  // e.g. "VEML6075: not answering"
         Serial.println();
     }
     delay(1000);

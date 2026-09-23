@@ -155,7 +155,7 @@ int main() {
     BufferPrint bp3(pb, sizeof pb); s.logReading(bp3); s.endReadings(); printf("[run VEML6030] row: %s\n", pb);
     onReading = nullptr; }
 
-  // 9. A dead VEML6030 (no acknowledge on the first reading) stops its batch of 8.
+  // 9. A dead VEML6030 (not answering on the first reading) stops its batch of 8.
   loadStandard();
   { Libelle s; s.begin(); int k = 0;
     onReading = [&](TwoWire& w) { k++; w.image[0x40] = 0x85; w.image[0x47] = 0x21; };   // chip 1, kind 1

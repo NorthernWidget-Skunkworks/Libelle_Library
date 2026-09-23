@@ -157,7 +157,7 @@ bool Libelle::updateMeasurements(uint8_t component)
   }
   else {
     // Per chip group: N readings each, appended to the arrays; a chip that
-    // reports absent (no acknowledge / not initialised) stops its batch.
+    // reports absent (not answering / self-test failed) stops its batch.
     if(component & VEML6075) _dev.takeReadings(VEML6075, _uvCfg.n, [this] { return updateUV(); });
     if(component & VEML6030) _dev.takeReadings(VEML6030, _lightCfg.n, [this] { return updateLight(); });
     if(component & ADS1115) _dev.takeReadings(ADS1115, _irCfg.n, [this] { return updateIR(); });
@@ -451,7 +451,7 @@ uint8_t Libelle::getFirmwareVersion()  { return _dev.firmwareVersion(); }
 NW_Report Libelle::report()
 {
   // The bridge's report first. Hardware v1: the accelerometer is the
-  // library's to judge; no acknowledge at begin() is kind 1, three identical
+  // library's to judge; not answering at begin() is kind 1, three identical
   // axes afterwards kind 4 (out of range).
   if(_dev.reportKind() == 0 && _accelFault) {
     NW_Report f;
@@ -486,7 +486,7 @@ void    Libelle::clearBootReport() { _dev.clearBootReport(); }
 
 String Libelle::reportNote()
 {
-  // One word for a data-table note: the chip, then the kind ("VEML6075NoACK").
+  // One word for a data-table note: the chip, then the kind ("VEML6075NotAnswering").
   return report().note(chips, 4);
 }
 
