@@ -355,7 +355,7 @@
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define LIBELLE_FW_MIN_PATCH 1
 </span></code></pre></div></div>
 
-<p>Lowest firmware patch (Page 0 byte 0x0A) this library accepts: patch 1 brought Schema 1 (Page 0, Block 0 handshake, data at 0x28-0x3D).</p>
+<p>Lowest firmware patch (Page 0 byte 0x0A) this library accepts: patch 1 brought Schema 1 (Page 0, Block 0 handshake, data at 0x48-0x5D).</p>
 
 <h3 id="define-libelle_uv_capacity">define LIBELLE_UV_CAPACITY</h3>
 
@@ -551,9 +551,9 @@ Distributed as-is; no warranty is given.
         <span class="kt">uint8_t</span> <span class="n">_component</span> <span class="o">=</span> <span class="n">ALL</span><span class="p">;</span>    <span class="c1">// Selection of the current beginReadings() run</span>
         <span class="kt">bool</span> <span class="nf">initAccel</span><span class="p">();</span>
         <span class="kt">float</span> <span class="nf">getG</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Axis</span><span class="p">);</span>
-        <span class="kt">bool</span> <span class="nf">readUV</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">d</span><span class="p">);</span>     <span class="c1">// Append one served VEML6075 reading (8 bytes from 0x30) unless faulted</span>
-        <span class="kt">bool</span> <span class="nf">readLight</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">d</span><span class="p">);</span>  <span class="c1">// Append one served VEML6030 reading (6 bytes from 0x28) unless faulted</span>
-        <span class="kt">bool</span> <span class="nf">readIR</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">d</span><span class="p">);</span>     <span class="c1">// Append one served ADS1115 reading (6 bytes from 0x38) unless faulted</span>
+        <span class="kt">bool</span> <span class="nf">readUV</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">d</span><span class="p">);</span>     <span class="c1">// Append one served VEML6075 reading (8 bytes from 0x50) unless faulted</span>
+        <span class="kt">bool</span> <span class="nf">readLight</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">d</span><span class="p">);</span>  <span class="c1">// Append one served VEML6030 reading (6 bytes from 0x48) unless faulted</span>
+        <span class="kt">bool</span> <span class="nf">readIR</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">d</span><span class="p">);</span>     <span class="c1">// Append one served ADS1115 reading (6 bytes from 0x58) unless faulted</span>
         <span class="kt">bool</span> <span class="nf">readData</span><span class="p">();</span>             <span class="c1">// One 22-byte read of the three bridge chips, appended</span>
         <span class="kt">void</span> <span class="nf">resetReadings</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">component</span><span class="p">);</span>
         <span class="kt">void</span> <span class="nf">summarise</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">component</span><span class="p">);</span> <span class="c1">// Means into the single-value fields, LIBELLE_ERROR when no reading</span>
@@ -569,7 +569,7 @@ Distributed as-is; no warranty is given.
 
 <hr />
 
-<p>Updated on 2026-09-23 at 17:21:34 +0000</p>
+<p>Updated on 2026-09-23 at 20:12:22 +0000</p>
 
         
       </section>
