@@ -561,7 +561,7 @@ Distributed as-is; no warranty is given.
   <span class="p">}</span>
   <span class="k">else</span> <span class="p">{</span>
     <span class="c1">// Per chip group: N readings each, appended to the arrays; a chip that</span>
-    <span class="c1">// reports absent (no acknowledge / not initialised) stops its batch.</span>
+    <span class="c1">// reports absent (not answering / self-test failed) stops its batch.</span>
     <span class="k">if</span><span class="p">(</span><span class="n">component</span> <span class="o">&amp;</span> <span class="n">VEML6075</span><span class="p">)</span> <span class="n">_dev</span><span class="p">.</span><span class="n">takeReadings</span><span class="p">(</span><span class="n">VEML6075</span><span class="p">,</span> <span class="n">_uvCfg</span><span class="p">.</span><span class="n">n</span><span class="p">,</span> <span class="p">[</span><span class="k">this</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="n">updateUV</span><span class="p">();</span> <span class="p">});</span>
     <span class="k">if</span><span class="p">(</span><span class="n">component</span> <span class="o">&amp;</span> <span class="n">VEML6030</span><span class="p">)</span> <span class="n">_dev</span><span class="p">.</span><span class="n">takeReadings</span><span class="p">(</span><span class="n">VEML6030</span><span class="p">,</span> <span class="n">_lightCfg</span><span class="p">.</span><span class="n">n</span><span class="p">,</span> <span class="p">[</span><span class="k">this</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="n">updateLight</span><span class="p">();</span> <span class="p">});</span>
     <span class="k">if</span><span class="p">(</span><span class="n">component</span> <span class="o">&amp;</span> <span class="n">ADS1115</span><span class="p">)</span> <span class="n">_dev</span><span class="p">.</span><span class="n">takeReadings</span><span class="p">(</span><span class="n">ADS1115</span><span class="p">,</span> <span class="n">_irCfg</span><span class="p">.</span><span class="n">n</span><span class="p">,</span> <span class="p">[</span><span class="k">this</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="n">updateIR</span><span class="p">();</span> <span class="p">});</span>
@@ -855,7 +855,7 @@ Distributed as-is; no warranty is given.
 <span class="n">NW_Report</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">report</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="c1">// The bridge's report first. Hardware v1: the accelerometer is the</span>
-  <span class="c1">// library's to judge; no acknowledge at begin() is kind 1, three identical</span>
+  <span class="c1">// library's to judge; not answering at begin() is kind 1, three identical</span>
   <span class="c1">// axes afterwards kind 4 (out of range).</span>
   <span class="k">if</span><span class="p">(</span><span class="n">_dev</span><span class="p">.</span><span class="n">reportKind</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">_accelFault</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">NW_Report</span> <span class="n">f</span><span class="p">;</span>
@@ -879,14 +879,18 @@ Distributed as-is; no warranty is given.
   <span class="k">return</span> <span class="n">report</span><span class="p">().</span><span class="n">print</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">chips</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="kt">size_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">printStatus</span><span class="p">(</span><span class="n">Print</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">)</span>
+<span class="kt">size_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">printStatus</span><span class="p">(</span><span class="n">Print</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">boot</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">printSnapshot</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">chips</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">printSnapshot</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">chips</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">boot</span><span class="p">);</span>
 <span class="p">}</span>
+
+<span class="kt">bool</span>    <span class="n">Libelle</span><span class="o">::</span><span class="n">reportIsFault</span><span class="p">()</span>   <span class="p">{</span> <span class="k">return</span> <span class="n">report</span><span class="p">().</span><span class="n">isFault</span><span class="p">();</span> <span class="p">}</span> <span class="c1">// the accelerometer's own fault counts too</span>
+<span class="kt">uint8_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">bootReportKind</span><span class="p">()</span>  <span class="p">{</span> <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">bootReport</span><span class="p">().</span><span class="n">kind</span><span class="p">();</span> <span class="p">}</span>
+<span class="kt">void</span>    <span class="n">Libelle</span><span class="o">::</span><span class="n">clearBootReport</span><span class="p">()</span> <span class="p">{</span> <span class="n">_dev</span><span class="p">.</span><span class="n">clearBootReport</span><span class="p">();</span> <span class="p">}</span>
 
 <span class="n">String</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">reportNote</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="c1">// One word for a data-table note: the chip, then the kind ("VEML6075NoACK").</span>
+  <span class="c1">// One word for a data-table note: the chip, then the kind ("VEML6075NotAnswering").</span>
   <span class="k">return</span> <span class="n">report</span><span class="p">().</span><span class="n">note</span><span class="p">(</span><span class="n">chips</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -912,7 +916,7 @@ Distributed as-is; no warranty is given.
 
 <hr />
 
-<p>Updated on 2026-09-23 at 20:12:22 +0000</p>
+<p>Updated on 2026-09-23 at 20:56:42 +0000</p>
 
         
       </section>
