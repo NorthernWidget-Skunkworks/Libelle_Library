@@ -846,23 +846,23 @@ Distributed as-is; no warranty is given.
 
 <span class="kt">bool</span>    <span class="n">Libelle</span><span class="o">::</span><span class="n">faulted</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">chip</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">chip</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="o">?</span> <span class="n">_accelFault</span> <span class="o">:</span> <span class="n">_dev</span><span class="p">.</span><span class="n">faulted</span><span class="p">(</span><span class="n">chip</span><span class="p">);</span> <span class="p">}</span> <span class="c1">// chip 3, the ADXL343, is the library's own on hardware v1</span>
 <span class="kt">bool</span>    <span class="n">Libelle</span><span class="o">::</span><span class="n">anyFault</span><span class="p">()</span>            <span class="p">{</span> <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">anyFault</span><span class="p">()</span> <span class="o">||</span> <span class="n">_accelFault</span><span class="p">;</span> <span class="p">}</span>
-<span class="kt">uint8_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">faultChip</span><span class="p">()</span>           <span class="p">{</span> <span class="k">return</span> <span class="n">fault</span><span class="p">().</span><span class="n">chip</span><span class="p">();</span> <span class="p">}</span>
-<span class="kt">uint8_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">faultKind</span><span class="p">()</span>           <span class="p">{</span> <span class="k">return</span> <span class="n">fault</span><span class="p">().</span><span class="n">kind</span><span class="p">();</span> <span class="p">}</span>
+<span class="kt">uint8_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">reportChip</span><span class="p">()</span>           <span class="p">{</span> <span class="k">return</span> <span class="n">report</span><span class="p">().</span><span class="n">chip</span><span class="p">();</span> <span class="p">}</span>
+<span class="kt">uint8_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">reportKind</span><span class="p">()</span>           <span class="p">{</span> <span class="k">return</span> <span class="n">report</span><span class="p">().</span><span class="n">kind</span><span class="p">();</span> <span class="p">}</span>
 <span class="kt">uint8_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">getHardwareMajor</span><span class="p">()</span>    <span class="p">{</span> <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">hardwareMajor</span><span class="p">();</span> <span class="p">}</span>
 <span class="kt">uint8_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">getHardwareMinor</span><span class="p">()</span>    <span class="p">{</span> <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">hardwareMinor</span><span class="p">();</span> <span class="p">}</span>
 <span class="kt">uint8_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">getFirmwareVersion</span><span class="p">()</span>  <span class="p">{</span> <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">firmwareVersion</span><span class="p">();</span> <span class="p">}</span>
 
-<span class="n">NW_Fault</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">fault</span><span class="p">()</span>
+<span class="n">NW_Report</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">report</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="c1">// The bridge's latched fault first. Hardware v1: the accelerometer is the</span>
+  <span class="c1">// The bridge's report first. Hardware v1: the accelerometer is the</span>
   <span class="c1">// library's to judge; no acknowledge at begin() is kind 1, three identical</span>
   <span class="c1">// axes afterwards kind 4 (out of range).</span>
-  <span class="k">if</span><span class="p">(</span><span class="n">_dev</span><span class="p">.</span><span class="n">faultKind</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">_accelFault</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">NW_Fault</span> <span class="n">f</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">_dev</span><span class="p">.</span><span class="n">reportKind</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">_accelFault</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NW_Report</span> <span class="n">f</span><span class="p">;</span>
     <span class="n">f</span><span class="p">.</span><span class="n">code</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">_accelOk</span> <span class="o">?</span> <span class="mi">4</span> <span class="o">:</span> <span class="mi">1</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">f</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">fault</span><span class="p">();</span>
+  <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">report</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="n">String</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">beginFailure</span><span class="p">()</span>
@@ -871,18 +871,23 @@ Distributed as-is; no warranty is given.
   <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">beginFailure</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="c1">// The chip names are Libelle's own (the spec's chip table); NW_Fault prints the rest.</span>
+<span class="c1">// The chip names are Libelle's own (the spec's chip table); NW_Report prints the rest.</span>
 <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span> <span class="n">chips</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="s">"VEML6075"</span><span class="p">,</span> <span class="s">"VEML6030"</span><span class="p">,</span> <span class="s">"ADS1115"</span><span class="p">,</span> <span class="s">"ADXL343"</span><span class="p">};</span>
 
-<span class="kt">size_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">printFault</span><span class="p">(</span><span class="n">Print</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">)</span>
+<span class="kt">size_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">printReport</span><span class="p">(</span><span class="n">Print</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="n">fault</span><span class="p">().</span><span class="n">print</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">chips</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">report</span><span class="p">().</span><span class="n">print</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">chips</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="n">String</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">faultNote</span><span class="p">()</span>
+<span class="kt">size_t</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">printStatus</span><span class="p">(</span><span class="n">Print</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="n">_dev</span><span class="p">.</span><span class="n">printSnapshot</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">chips</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">String</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">reportNote</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="c1">// One word for a data-table note: the chip, then the kind ("VEML6075NoACK").</span>
-  <span class="k">return</span> <span class="n">fault</span><span class="p">().</span><span class="n">note</span><span class="p">(</span><span class="n">chips</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">report</span><span class="p">().</span><span class="n">note</span><span class="p">(</span><span class="n">chips</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="n">Libelle</span><span class="o">::</span><span class="n">PrintAllRegs</span><span class="p">()</span>
@@ -907,7 +912,7 @@ Distributed as-is; no warranty is given.
 
 <hr />
 
-<p>Updated on 2026-09-23 at 16:11:16 +0000</p>
+<p>Updated on 2026-09-23 at 17:21:34 +0000</p>
 
         
       </section>
