@@ -30,7 +30,7 @@ getters: uva=-9999 uvb=-9999 als=-9999 white=-9999 lux=-9999.0000 irS=-9999.0000
 [unit reset] update=1 any=0 chip=7 kind=6 text='unit: reset since configured' note='UnitReset'
 [accelerometer flat] update=0 faulted(3)=1 any=1 chip=3 kind=4 text='ADXL343: out of range' note='ADXL343Range' roll=-9999.00 tiltCount=0
 [N] setLightReadings(5)=5 setUVReadings(3)=3 setIRReadings(2)=2 setTiltReadings(4)=4 setLightReadings(99)=8
-[N=5,3,2,4] update=1 lightCount=5 uvCount=3 irCount=2 tiltCount=4 lastRequest=2 requestFrom=52
+[N=5,3,2,4] update=1 lightCount=5 uvCount=3 irCount=2 tiltCount=4 lastRequest=2 requestFrom=62
 [N=5,3,2,4] als mean=4200.0000 std=158.1139 sterr=70.7107 median=4200.0000 | lux mean=120.9600 std=4.5537 | uva mean=12355.0000 std=10.0000 median=12355.0000 | temp mean=25.0829 std=0.1172 | roll mean=0.0000 std=0.0000
 [N=5,3,2,4] header: R_u [deg],R_u std [deg],R_u sterr [deg],P_u [deg],P_u std [deg],P_u sterr [deg],UVA_u,UVA_u std,UVA_u sterr,UVB_u,UVB_u std,UVB_u sterr,White_u,White_u std,White_u sterr,Vis_u [lx],Vis_u std [lx],Vis_u sterr [lx],IR_S_u,IR_S_u std,IR_S_u sterr,IR_M_u,IR_M_u std,IR_M_u sterr,PyroT_u [C],PyroT_u std [C],PyroT_u sterr [C],
 [N=5,3,2,4] string: 0.00,0.00,0.00,0.00,0.00,0.00,12355,10.00,5.77,678,0.00,0.00,3000,0.00,0.00,120.96,4.55,2.04,1.25,0.00,0.00,2.50,0.00,0.00,25.08,0.12,0.08,
@@ -45,4 +45,4 @@ getters: uva=-9999 uvb=-9999 als=-9999 white=-9999 lux=-9999.0000 irS=-9999.0000
 [run VEML6030] header: White_u,Vis_u [lx],
 [run VEML6030] row: 3000,115.20,
 [dead VEML6030] N=8: update=0 readings taken=1 lightCount=0 lux=-9999.00 note='VEML6030NoACK'
-[cost] requestFrom calls for one getString(): 7
+[cost] requestFrom calls for one getString(): 8

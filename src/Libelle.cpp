@@ -179,21 +179,21 @@ bool Libelle::updateMeasurements(uint8_t component)
 bool Libelle::updateUV()
 {
   uint8_t d[8];
-  if(!_dev.takeReading(VEML6075) || !_dev.readBytes(UVA_ADR, d, 8)) return false;
+  if(!_dev.takeReading(VEML6075) || !_dev.readData(UVA_ADR, d, 8)) return false;
   return readUV(d);
 }
 
 bool Libelle::updateLight()
 {
   uint8_t d[6];
-  if(!_dev.takeReading(VEML6030) || !_dev.readBytes(ALS_ADR, d, 6)) return false;
+  if(!_dev.takeReading(VEML6030) || !_dev.readData(ALS_ADR, d, 6)) return false;
   return readLight(d);
 }
 
 bool Libelle::updateIR()
 {
   uint8_t d[6];
-  if(!_dev.takeReading(ADS1115) || !_dev.readBytes(IR_SHORT_ADR, d, 6)) return false;
+  if(!_dev.takeReading(ADS1115) || !_dev.readData(IR_SHORT_ADR, d, 6)) return false;
   return readIR(d);
 }
 
@@ -244,7 +244,7 @@ bool Libelle::readData()
 {
   // Blocks 1-3 are consecutive (0x28-0x3D): one read.
   uint8_t d[22];
-  if(!_dev.readBytes(NW_REG_DATA, d, 22)) return false;
+  if(!_dev.readData(NW_REG_DATA, d, 22)) return false;
   readLight(d);
   readUV(d + 8);
   readIR(d + 16);
