@@ -1,0 +1,655 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.1 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js" dir="ltr">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>extras/test/test_output.cpp - Libelle Library</title>
+<meta name="description" content="Arduino library for the NorthernWidget Libelle shortwave pyranometer">
+
+
+  <meta name="author" content="Northern Widget">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Libelle Library">
+<meta property="og:title" content="extras/test/test_output.cpp">
+<meta property="og:url" content="https://docs.northernwidget.com/Libelle_Library/Files/test__output_8cpp/">
+
+
+  <meta property="og:description" content="Arduino library for the NorthernWidget Libelle shortwave pyranometer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://docs.northernwidget.com/Libelle_Library/Files/test__output_8cpp/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/Libelle_Library/feed.xml" type="application/atom+xml" rel="alternate" title="Libelle Library Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/Libelle_Library/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/Libelle_Library/">
+          Libelle Library
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/"
+                
+                
+              >Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <a href="/Libelle_Library/"><span class="nav__sub-title">Overview</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Classes/classLibelle/"><span class="nav__sub-title">Libelle Class</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Classes/index_classes/"><span class="nav__sub-title">Classes</span></a>
+          
+
+          
+        </li>
+      
+        <li>
+          
+            <a href="/Libelle_Library/Files/index_files/"><span class="nav__sub-title">Files</span></a>
+          
+
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="extras/test/test_output.cpp">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://docs.northernwidget.com/Libelle_Library/Files/test__output_8cpp/" itemprop="url">extras/test/test_output.cpp
+</a>
+          </h1>
+          
+
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc" aria-label="Table of contents">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#functions">Functions</a></li><li><a href="#attributes">Attributes</a></li><li><a href="#functions-documentation">Functions Documentation</a><ul><li><a href="#function-setaccel">function setAccel</a></li><li><a href="#function-installbus">function installBus</a></li><li><a href="#function-put16">function put16</a></li><li><a href="#function-put32">function put32</a></li><li><a href="#function-loadimage">function loadImage</a></li><li><a href="#function-loadstandard">function loadStandard</a></li><li><a href="#function-report">function report</a></li><li><a href="#function-main">function main</a></li></ul></li><li><a href="#attributes-documentation">Attributes Documentation</a><ul><li><a href="#variable-wire">variable Wire</a></li><li><a href="#variable-adxl">variable adxl</a></li><li><a href="#variable-adxladdress">variable adxlAddress</a></li><li><a href="#variable-adxlpresent">variable adxlPresent</a></li></ul></li><li><a href="#source-code">Source code</a></li></ul>
+            </nav>
+          </aside>
+        
+        <h2 id="functions">Functions</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#function-setaccel">setAccel</a></strong>(int16_t x, int16_t y, int16_t z)</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#function-installbus">installBus</a></strong>(uint8_t bridgeAddress)</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#function-put16">put16</a></strong>(uint8_t * r, uint8_t at, uint16_t v)</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#function-put32">put32</a></strong>(uint8_t * r, uint8_t at, int32_t v)</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#function-loadimage">loadImage</a></strong>(int32_t uva, int32_t uvb, uint16_t als, uint16_t white, uint16_t luxMul, uint16_t irMid, uint16_t irShort, uint16_t therm, uint8_t fwPatch =1, uint8_t schema =0x01)</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#function-loadstandard">loadStandard</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#function-report">report</a></strong>(const char * name, <a href="/Libelle_Library/Classes/classLibelle/">Libelle</a> &amp; s)</td>
+    </tr>
+    <tr>
+      <td>int</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#function-main">main</a></strong>()</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="attributes">Attributes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TwoWire</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#variable-wire">Wire</a></strong></td>
+    </tr>
+    <tr>
+      <td>uint8_t</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#variable-adxl">adxl</a></strong></td>
+    </tr>
+    <tr>
+      <td>uint8_t</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#variable-adxladdress">adxlAddress</a></strong></td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td><strong><a href="/Libelle_Library/Files/test__output_8cpp/#variable-adxlpresent">adxlPresent</a></strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="functions-documentation">Functions Documentation</h2>
+
+<h3 id="function-setaccel">function setAccel</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">void</span> <span class="n">setAccel</span><span class="p">(</span>
+    <span class="kt">int16_t</span> <span class="n">x</span><span class="p">,</span>
+    <span class="kt">int16_t</span> <span class="n">y</span><span class="p">,</span>
+    <span class="kt">int16_t</span> <span class="n">z</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-installbus">function installBus</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">void</span> <span class="n">installBus</span><span class="p">(</span>
+    <span class="kt">uint8_t</span> <span class="n">bridgeAddress</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-put16">function put16</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">void</span> <span class="n">put16</span><span class="p">(</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span> <span class="n">r</span><span class="p">,</span>
+    <span class="kt">uint8_t</span> <span class="n">at</span><span class="p">,</span>
+    <span class="kt">uint16_t</span> <span class="n">v</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-put32">function put32</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">void</span> <span class="n">put32</span><span class="p">(</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span> <span class="n">r</span><span class="p">,</span>
+    <span class="kt">uint8_t</span> <span class="n">at</span><span class="p">,</span>
+    <span class="kt">int32_t</span> <span class="n">v</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-loadimage">function loadImage</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">void</span> <span class="n">loadImage</span><span class="p">(</span>
+    <span class="kt">int32_t</span> <span class="n">uva</span><span class="p">,</span>
+    <span class="kt">int32_t</span> <span class="n">uvb</span><span class="p">,</span>
+    <span class="kt">uint16_t</span> <span class="n">als</span><span class="p">,</span>
+    <span class="kt">uint16_t</span> <span class="n">white</span><span class="p">,</span>
+    <span class="kt">uint16_t</span> <span class="n">luxMul</span><span class="p">,</span>
+    <span class="kt">uint16_t</span> <span class="n">irMid</span><span class="p">,</span>
+    <span class="kt">uint16_t</span> <span class="n">irShort</span><span class="p">,</span>
+    <span class="kt">uint16_t</span> <span class="n">therm</span><span class="p">,</span>
+    <span class="kt">uint8_t</span> <span class="n">fwPatch</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="kt">uint8_t</span> <span class="n">schema</span> <span class="o">=</span><span class="mh">0x01</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-loadstandard">function loadStandard</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">void</span> <span class="n">loadStandard</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-report">function report</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">void</span> <span class="n">report</span><span class="p">(</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">name</span><span class="p">,</span>
+    <span class="n">Libelle</span> <span class="o">&amp;</span> <span class="n">s</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="function-main">function main</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="attributes-documentation">Attributes Documentation</h2>
+
+<h3 id="variable-wire">variable Wire</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">TwoWire</span> <span class="n">Wire</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="variable-adxl">variable adxl</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">adxl</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="variable-adxladdress">variable adxlAddress</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">adxlAddress</span> <span class="o">=</span> <span class="mh">0x1D</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="variable-adxlpresent">variable adxlPresent</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">bool</span> <span class="n">adxlPresent</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="source-code">Source code</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Output-regression test for Libelle_Library: compiles src/Libelle.cpp against</span>
+<span class="c1">// the NW_Core stubs and prints getHeader()/getString()/getters for fixed</span>
+<span class="c1">// register images. Two chips share the bus: the pyranometer bridge (Schema 1</span>
+<span class="c1">// register map) and the ADXL343 accelerometer, which the library reads</span>
+<span class="c1">// directly (hardware v1). run.sh diffs the result against baseline.txt.</span>
+<span class="cp">#include</span> <span class="cpf">"Arduino.h"</span><span class="cp">
+#include</span> <span class="cpf">"Wire.h"</span><span class="cp">
+</span><span class="n">TwoWire</span> <span class="n">Wire</span><span class="p">;</span>
+<span class="cp">#include</span> <span class="cpf">"../../src/Libelle.cpp"</span><span class="cp">
+#include</span> <span class="cpf">"NW_TestSupport.h"</span><span class="cp">
+</span>
+<span class="c1">// The ADXL343: a register file of its own at 0x1D (UP) or 0x53 (DOWN), served by the hooks.</span>
+<span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">adxl</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+<span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">adxlAddress</span> <span class="o">=</span> <span class="mh">0x1D</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">bool</span> <span class="n">adxlPresent</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">setAccel</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="n">z</span><span class="p">)</span> <span class="p">{</span>   <span class="c1">// 0.0039 g per LSB: 256 = 1 g</span>
+  <span class="n">adxl</span><span class="p">[</span><span class="mh">0x32</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span> <span class="n">adxl</span><span class="p">[</span><span class="mh">0x33</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span>
+  <span class="n">adxl</span><span class="p">[</span><span class="mh">0x34</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span> <span class="n">adxl</span><span class="p">[</span><span class="mh">0x35</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span>
+  <span class="n">adxl</span><span class="p">[</span><span class="mh">0x36</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span> <span class="n">adxl</span><span class="p">[</span><span class="mh">0x37</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">installBus</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">bridgeAddress</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">deviceAddress</span> <span class="o">=</span> <span class="n">bridgeAddress</span><span class="p">;</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">isPresent</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">uint8_t</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">Wire</span><span class="p">.</span><span class="n">present</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">Wire</span><span class="p">.</span><span class="n">deviceAddress</span> <span class="o">||</span> <span class="p">(</span><span class="n">adxlPresent</span> <span class="o">&amp;&amp;</span> <span class="n">a</span> <span class="o">==</span> <span class="n">adxlAddress</span><span class="p">));</span> <span class="p">};</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">hookOnly</span>  <span class="o">=</span> <span class="p">[](</span><span class="kt">uint8_t</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">==</span> <span class="n">adxlAddress</span><span class="p">;</span> <span class="p">};</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">onRequest</span> <span class="o">=</span> <span class="p">[](</span><span class="n">TwoWire</span><span class="o">&amp;</span> <span class="n">w</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">n</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">deque</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;&amp;</span> <span class="n">out</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">w</span><span class="p">.</span><span class="n">address</span><span class="p">()</span> <span class="o">!=</span> <span class="n">adxlAddress</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>                       <span class="c1">// the bridge: the image</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">out</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">adxl</span><span class="p">[(</span><span class="n">w</span><span class="p">.</span><span class="n">pointer</span><span class="p">()</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x3F</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="n">installFirmwareEmulation</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// Schema 1 register image: Page 0 as NW-Provision writes it (with the firmware's</span>
+<span class="c1">// patch at 0x0A), Page 1 with a complete reading (Libelle appendix: VEML6030 ALS,</span>
+<span class="c1">// white and lux multiplier uint16 at 0x28; VEML6075 UVA and UVB int32 at 0x30;</span>
+<span class="c1">// ADS1115 IR short, IR mid and thermistor uint16 at 0x38), little-endian.</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">put16</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">at</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="n">r</span><span class="p">[</span><span class="n">at</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span> <span class="n">r</span><span class="p">[</span><span class="n">at</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">put32</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">at</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">r</span><span class="p">[</span><span class="n">at</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">i</span><span class="p">))</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">loadImage</span><span class="p">(</span><span class="kt">int32_t</span> <span class="n">uva</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">uvb</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">als</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">white</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">luxMul</span><span class="p">,</span>
+                      <span class="kt">uint16_t</span> <span class="n">irMid</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">irShort</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">therm</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">fwPatch</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">schema</span> <span class="o">=</span> <span class="mh">0x01</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">uint8_t</span><span class="o">*</span> <span class="n">r</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">.</span><span class="n">image</span><span class="p">;</span>
+  <span class="n">nwLoadPage0</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="s">"Libelle"</span><span class="p">,</span> <span class="n">Wire</span><span class="p">.</span><span class="n">deviceAddress</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fwPatch</span><span class="p">,</span> <span class="n">schema</span><span class="p">);</span>   <span class="c1">// Page 0 and Block 0, HW 0.1</span>
+  <span class="n">put16</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mh">0x28</span><span class="p">,</span> <span class="n">als</span><span class="p">);</span> <span class="n">put16</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mh">0x2A</span><span class="p">,</span> <span class="n">white</span><span class="p">);</span> <span class="n">put16</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mh">0x2C</span><span class="p">,</span> <span class="n">luxMul</span><span class="p">);</span>
+  <span class="n">put32</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="n">uva</span><span class="p">);</span> <span class="n">put32</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mh">0x34</span><span class="p">,</span> <span class="n">uvb</span><span class="p">);</span>
+  <span class="n">put16</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mh">0x38</span><span class="p">,</span> <span class="n">irShort</span><span class="p">);</span> <span class="n">put16</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mh">0x3A</span><span class="p">,</span> <span class="n">irMid</span><span class="p">);</span> <span class="n">put16</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mh">0x3C</span><span class="p">,</span> <span class="n">therm</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">loadStandard</span><span class="p">()</span> <span class="p">{</span> <span class="n">loadImage</span><span class="p">(</span><span class="mi">12345</span><span class="p">,</span> <span class="mi">678</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">13200</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">report</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="n">Libelle</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"[%s]</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"header: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getHeader</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"string: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getString</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"getters: uva=%ld uvb=%ld als=%ld white=%ld lux=%.4f irS=%.4f irM=%.4f temp=%.4f roll=%.4f pitch=%.4f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
+         <span class="n">s</span><span class="p">.</span><span class="n">getUVA</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getUVB</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getALS</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getWhite</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getLux</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getIR_Short</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getIR_Mid</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getTemp</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getRoll</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getPitch</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 1. UP unit, level: ALS 4000 x mult 8 x 0.0036 = 115.2 lx; IR 1.25 V and 2.5 V; thermistor at 25.00 C</span>
+  <span class="c1">//    (1.65 V: Rt = R25, so the Steinhart-Hart log term is zero); 1 g on Z.</span>
+  <span class="n">installBus</span><span class="p">(</span><span class="mh">0x4C</span><span class="p">);</span> <span class="n">adxlAddress</span> <span class="o">=</span> <span class="mh">0x1D</span><span class="p">;</span> <span class="n">setAccel</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">);</span>
+  <span class="n">loadStandard</span><span class="p">();</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">(</span><span class="n">UP</span><span class="p">);</span> <span class="n">printf</span><span class="p">(</span><span class="s">"begin=%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span> <span class="n">report</span><span class="p">(</span><span class="s">"UP, level"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="c1">// 2. Tilted: X 100, Y 50, Z 230 LSB.</span>
+  <span class="n">setAccel</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">230</span><span class="p">);</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">(</span><span class="n">UP</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">report</span><span class="p">(</span><span class="s">"UP, tilted"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="c1">// 3. DOWN unit: bridge at 0x0C, accelerometer at 0x53; a different set of values.</span>
+  <span class="n">installBus</span><span class="p">(</span><span class="mh">0x0C</span><span class="p">);</span> <span class="n">adxlAddress</span> <span class="o">=</span> <span class="mh">0x53</span><span class="p">;</span> <span class="n">setAccel</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">250</span><span class="p">);</span>
+  <span class="n">loadImage</span><span class="p">(</span><span class="mi">1000000</span><span class="p">,</span> <span class="mi">2000000</span><span class="p">,</span> <span class="mi">65535</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">65535</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2640</span><span class="p">);</span>   <span class="c1">// 0.33 V on the thermistor</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">(</span><span class="n">DOWN</span><span class="p">);</span> <span class="n">printf</span><span class="p">(</span><span class="s">"begin=%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span> <span class="n">report</span><span class="p">(</span><span class="s">"DOWN"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="c1">// 4. Nothing on the bus.</span>
+  <span class="n">installBus</span><span class="p">(</span><span class="mh">0x4C</span><span class="p">);</span> <span class="n">adxlAddress</span> <span class="o">=</span> <span class="mh">0x1D</span><span class="p">;</span> <span class="n">setAccel</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">);</span> <span class="n">loadStandard</span><span class="p">();</span> <span class="n">Wire</span><span class="p">.</span><span class="n">present</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">(</span><span class="n">UP</span><span class="p">);</span> <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">printf</span><span class="p">(</span><span class="s">"begin with no sensor: %d failure=%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">beginFailure</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span> <span class="n">report</span><span class="p">(</span><span class="s">"absent"</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span> <span class="p">}</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">present</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+  <span class="c1">// 5. begin() gates: wrong name, wrong schema, firmware too old, the versions it reports,</span>
+  <span class="c1">//    an explicit address, and a bridge without its accelerometer.</span>
+  <span class="n">loadStandard</span><span class="p">();</span> <span class="n">Wire</span><span class="p">.</span><span class="n">image</span><span class="p">[</span><span class="mh">0x01</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'X'</span><span class="p">;</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">;</span> <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[wrong name] begin=%d failure=%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">beginFailure</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span> <span class="p">}</span>
+  <span class="n">loadImage</span><span class="p">(</span><span class="mi">12345</span><span class="p">,</span> <span class="mi">678</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">13200</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">);</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">;</span> <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[schema 0x00] begin=%d failure=%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">beginFailure</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span> <span class="p">}</span>
+  <span class="n">loadImage</span><span class="p">(</span><span class="mi">12345</span><span class="p">,</span> <span class="mi">678</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">13200</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">;</span> <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[fw patch 0 &lt; min %d] begin=%d fw=%u failure=%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">LIBELLE_FW_MIN_PATCH</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getFirmwareVersion</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">beginFailure</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span> <span class="p">}</span>
+  <span class="n">loadStandard</span><span class="p">();</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">;</span> <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[versions] begin=%d hw=%u.%u fw=%u failure=%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getHardwareMajor</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getHardwareMinor</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getFirmwareVersion</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">beginFailure</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span> <span class="p">}</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">(</span><span class="n">DOWN</span><span class="p">);</span> <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mh">0x4C</span><span class="p">);</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[DOWN unit at an explicit 0x4C] begin=%d failure=%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">beginFailure</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span> <span class="p">}</span>
+  <span class="n">adxlPresent</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">;</span> <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[no accelerometer] begin=%d failure=%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">beginFailure</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">String</span> <span class="n">row</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span>   <span class="c1">// evaluated before the fault getters: printf argument order is unspecified</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[no accelerometer] string: %s faulted(3)=%d any=%d note='%s'</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">row</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">faulted</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">s</span><span class="p">.</span><span class="n">anyFault</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">faultNote</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span> <span class="p">}</span>
+  <span class="n">adxlPresent</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+  <span class="c1">// 6. Faults: the VEML6075 does not acknowledge (status bit 1, pan-fault, latched 0x01); the</span>
+  <span class="c1">//    other chips survive. Then an ADS1115 timeout (0x22), then a unit reset with a clean</span>
+  <span class="c1">//    status, then an accelerometer whose three axes read the same (the library's own fault).</span>
+  <span class="n">loadStandard</span><span class="p">();</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">;</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="kt">char</span> <span class="n">pb</span><span class="p">[</span><span class="mi">48</span><span class="p">];</span>
+    <span class="n">onReading</span> <span class="o">=</span> <span class="p">[](</span><span class="n">TwoWire</span><span class="o">&amp;</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span> <span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">[</span><span class="mh">0x20</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x83</span><span class="p">;</span> <span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">[</span><span class="mh">0x27</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x01</span><span class="p">;</span> <span class="p">};</span>
+    <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">updateMeasurements</span><span class="p">();</span> <span class="n">BufferPrint</span> <span class="nf">bp</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">pb</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">printFault</span><span class="p">(</span><span class="n">bp</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[VEML6075 no ACK] update=%d faulted(0)=%d faulted(1)=%d faulted(2)=%d any=%d chip=%u kind=%u text='%s' note='%s'</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
+           <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">faulted</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">s</span><span class="p">.</span><span class="n">faulted</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">s</span><span class="p">.</span><span class="n">faulted</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">s</span><span class="p">.</span><span class="n">anyFault</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">faultChip</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">faultKind</span><span class="p">(),</span> <span class="n">pb</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">faultNote</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[VEML6075 no ACK] string: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getString</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">onReading</span> <span class="o">=</span> <span class="p">[](</span><span class="n">TwoWire</span><span class="o">&amp;</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span> <span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">[</span><span class="mh">0x20</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x89</span><span class="p">;</span> <span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">[</span><span class="mh">0x27</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x42</span><span class="p">;</span> <span class="p">};</span>   <span class="c1">// chip 2, kind 2</span>
+    <span class="n">String</span> <span class="n">row</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span>   <span class="c1">// evaluated before the note: printf argument order is unspecified</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[ADS1115 timeout] string: %s note='%s'</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">row</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">faultNote</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">onReading</span> <span class="o">=</span> <span class="p">[](</span><span class="n">TwoWire</span><span class="o">&amp;</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span> <span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">[</span><span class="mh">0x20</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x01</span><span class="p">;</span> <span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">[</span><span class="mh">0x27</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xE6</span><span class="p">;</span> <span class="p">};</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">updateMeasurements</span><span class="p">();</span> <span class="n">BufferPrint</span> <span class="nf">bp2</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">pb</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">printFault</span><span class="p">(</span><span class="n">bp2</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[unit reset] update=%d any=%d chip=%u kind=%u text='%s' note='%s'</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">anyFault</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">faultChip</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">faultKind</span><span class="p">(),</span> <span class="n">pb</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">faultNote</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">onReading</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="n">setAccel</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">updateMeasurements</span><span class="p">();</span> <span class="n">BufferPrint</span> <span class="nf">bp3</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">pb</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">printFault</span><span class="p">(</span><span class="n">bp3</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[accelerometer flat] update=%d faulted(3)=%d any=%d chip=%u kind=%u text='%s' note='%s' roll=%.2f tiltCount=%u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">faulted</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">s</span><span class="p">.</span><span class="n">anyFault</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">faultChip</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">faultKind</span><span class="p">(),</span> <span class="n">pb</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">faultNote</span><span class="p">().</span><span class="n">c_str</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getRoll</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getTiltCount</span><span class="p">());</span>
+    <span class="n">setAccel</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="c1">// 7. N readings with statistics: ALS steps through five values (lux follows), UVA through</span>
+  <span class="c1">//    three, the thermistor through two; the batch word reaches the bridge; the</span>
+  <span class="c1">//    accelerometer takes four; getString() grows its columns.</span>
+  <span class="n">loadStandard</span><span class="p">();</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">;</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">onReading</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">TwoWire</span><span class="o">&amp;</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span> <span class="n">k</span><span class="o">++</span><span class="p">;</span>
+      <span class="n">put16</span><span class="p">(</span><span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">,</span> <span class="mh">0x28</span><span class="p">,</span> <span class="mi">4000</span> <span class="o">+</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">%</span> <span class="mi">5</span><span class="p">));</span>
+      <span class="n">put32</span><span class="p">(</span><span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="mi">12345</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">%</span> <span class="mi">3</span><span class="p">));</span>
+      <span class="n">put16</span><span class="p">(</span><span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">,</span> <span class="mh">0x3C</span><span class="p">,</span> <span class="mi">13200</span> <span class="o">+</span> <span class="mi">40</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">%</span> <span class="mi">2</span><span class="p">));</span> <span class="p">};</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[N] setLightReadings(5)=%u setUVReadings(3)=%u setIRReadings(2)=%u setTiltReadings(4)=%u setLightReadings(99)=%u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
+           <span class="n">s</span><span class="p">.</span><span class="n">setLightReadings</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">s</span><span class="p">.</span><span class="n">setUVReadings</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">s</span><span class="p">.</span><span class="n">setIRReadings</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">s</span><span class="p">.</span><span class="n">setTiltReadings</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">s</span><span class="p">.</span><span class="n">setLightReadings</span><span class="p">(</span><span class="mi">99</span><span class="p">));</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">setLightReadings</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">setLightStats</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">setUVStats</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">setIRStats</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">setTiltStats</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+    <span class="n">lastRequest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="kt">unsigned</span> <span class="n">t0</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">.</span><span class="n">transactions</span><span class="p">;</span> <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">updateMeasurements</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[N=5,3,2,4] update=%d lightCount=%u uvCount=%u irCount=%u tiltCount=%u lastRequest=%u requestFrom=%u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
+           <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getLightCount</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getUVCount</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getIRCount</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getTiltCount</span><span class="p">(),</span> <span class="n">lastRequest</span><span class="p">,</span> <span class="n">Wire</span><span class="p">.</span><span class="n">transactions</span> <span class="o">-</span> <span class="n">t0</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[N=5,3,2,4] als mean=%.4f std=%.4f sterr=%.4f median=%.4f | lux mean=%.4f std=%.4f | uva mean=%.4f std=%.4f median=%.4f | temp mean=%.4f std=%.4f | roll mean=%.4f std=%.4f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
+           <span class="n">s</span><span class="p">.</span><span class="n">getALSMean</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getALSStd</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getALSSterr</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getALSMedian</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getLuxMean</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getLuxStd</span><span class="p">(),</span>
+           <span class="n">s</span><span class="p">.</span><span class="n">getUVAMean</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getUVAStd</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getUVAMedian</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getTempMean</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getTempStd</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getRollMean</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getRollStd</span><span class="p">());</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[N=5,3,2,4] header: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getHeader</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[N=5,3,2,4] string: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getString</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">updateMeasurements</span><span class="p">(</span><span class="n">Libelle</span><span class="o">::</span><span class="n">VEML6030</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[VEML6030 only] update=%d lightCount=%u uvCount=%u uva=%ld lux=%.4f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getLightCount</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getUVCount</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getUVA</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getLux</span><span class="p">());</span>
+    <span class="n">onReading</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="c1">// 8. Reading interface: header, three logged readings of ALL, then the accelerometer</span>
+  <span class="c1">//    alone (nothing written to the bridge), then the VEML6030 alone.</span>
+  <span class="n">loadStandard</span><span class="p">();</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">;</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="kt">char</span> <span class="n">pb</span><span class="p">[</span><span class="mi">160</span><span class="p">];</span>
+    <span class="n">onReading</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">TwoWire</span><span class="o">&amp;</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span> <span class="n">k</span><span class="o">++</span><span class="p">;</span> <span class="n">put32</span><span class="p">(</span><span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="mi">12300</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">k</span><span class="p">);</span> <span class="p">};</span>
+    <span class="n">lastRequest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">s</span><span class="p">.</span><span class="n">beginReadings</span><span class="p">(</span><span class="n">Libelle</span><span class="o">::</span><span class="n">ALL</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">BufferPrint</span> <span class="nf">bh</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">pb</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">printHeader</span><span class="p">(</span><span class="n">bh</span><span class="p">);</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[run ALL] header: %s lastRequest=%u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">lastRequest</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="n">BufferPrint</span> <span class="n">bp</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">pb</span><span class="p">);</span> <span class="kt">size_t</span> <span class="n">n</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">logReading</span><span class="p">(</span><span class="n">bp</span><span class="p">);</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[run ALL] row %d (%zu bytes): %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">pb</span><span class="p">);</span> <span class="p">}</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">endReadings</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[run ALL] uva count=%u mean=%.4f median=%.4f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getUVCount</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getUVAMean</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getUVAMedian</span><span class="p">());</span>
+    <span class="n">lastRequest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="kt">unsigned</span> <span class="n">t0</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">.</span><span class="n">transactions</span><span class="p">;</span> <span class="n">s</span><span class="p">.</span><span class="n">beginReadings</span><span class="p">(</span><span class="n">Libelle</span><span class="o">::</span><span class="n">ADXL343</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">BufferPrint</span> <span class="nf">bh2</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">pb</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">printHeader</span><span class="p">(</span><span class="n">bh2</span><span class="p">);</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[run ADXL343] header: %s lastRequest=%u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">lastRequest</span><span class="p">);</span>
+    <span class="n">BufferPrint</span> <span class="nf">bp2</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">pb</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">logReading</span><span class="p">(</span><span class="n">bp2</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">endReadings</span><span class="p">();</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[run ADXL343] row: %s requestFrom=%u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">pb</span><span class="p">,</span> <span class="n">Wire</span><span class="p">.</span><span class="n">transactions</span> <span class="o">-</span> <span class="n">t0</span><span class="p">);</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">beginReadings</span><span class="p">(</span><span class="n">Libelle</span><span class="o">::</span><span class="n">VEML6030</span><span class="p">);</span>
+    <span class="n">BufferPrint</span> <span class="nf">bh3</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">pb</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">printHeader</span><span class="p">(</span><span class="n">bh3</span><span class="p">);</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[run VEML6030] header: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">pb</span><span class="p">);</span>
+    <span class="n">BufferPrint</span> <span class="nf">bp3</span><span class="p">(</span><span class="n">pb</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">pb</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">logReading</span><span class="p">(</span><span class="n">bp3</span><span class="p">);</span> <span class="n">s</span><span class="p">.</span><span class="n">endReadings</span><span class="p">();</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[run VEML6030] row: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">pb</span><span class="p">);</span>
+    <span class="n">onReading</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="c1">// 9. A dead VEML6030 (no acknowledge on the first reading) stops its batch of 8.</span>
+  <span class="n">loadStandard</span><span class="p">();</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">;</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">onReading</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">TwoWire</span><span class="o">&amp;</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span> <span class="n">k</span><span class="o">++</span><span class="p">;</span> <span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">[</span><span class="mh">0x20</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x85</span><span class="p">;</span> <span class="n">w</span><span class="p">.</span><span class="n">image</span><span class="p">[</span><span class="mh">0x27</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x21</span><span class="p">;</span> <span class="p">};</span>   <span class="c1">// chip 1, kind 1</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">setLightReadings</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span> <span class="kt">bool</span> <span class="n">ok</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">updateMeasurements</span><span class="p">(</span><span class="n">Libelle</span><span class="o">::</span><span class="n">VEML6030</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[dead VEML6030] N=8: update=%d readings taken=%d lightCount=%u lux=%.2f note='%s'</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ok</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">getLightCount</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">getLux</span><span class="p">(),</span> <span class="n">s</span><span class="p">.</span><span class="n">faultNote</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">onReading</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="c1">// 10. Cost of one getString() with one reading of everything: bridge transactions plus three accelerometer axes.</span>
+  <span class="n">loadStandard</span><span class="p">();</span>
+  <span class="p">{</span> <span class="n">Libelle</span> <span class="n">s</span><span class="p">;</span> <span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="kt">unsigned</span> <span class="n">t0</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">.</span><span class="n">transactions</span><span class="p">;</span> <span class="n">s</span><span class="p">.</span><span class="n">getString</span><span class="p">();</span> <span class="n">printf</span><span class="p">(</span><span class="s">"[cost] requestFrom calls for one getString(): %u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">Wire</span><span class="p">.</span><span class="n">transactions</span> <span class="o">-</span> <span class="n">t0</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"bus transactions total: %u</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">Wire</span><span class="p">.</span><span class="n">transactions</span><span class="p">);</span>   <span class="c1">// metric, not output</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>Updated on 2026-09-23 at 16:11:16 +0000</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+
+  
+
+
+        
+
+
+
+      </footer>
+
+      
+
+      
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/Libelle_Library/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2026 <a href="https://docs.northernwidget.com">Libelle Library</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/Libelle_Library/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

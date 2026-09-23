@@ -225,11 +225,32 @@
           <aside class="sidebar__right sticky">
             <nav class="toc" aria-label="Table of contents">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#public-functions">Public Functions</a></li><li><a href="#public-functions-documentation">Public Functions Documentation</a><ul><li><a href="#function-libelle">function Libelle</a></li><li><a href="#function-begin">function begin</a></li><li><a href="#function-getroll">function getRoll</a></li><li><a href="#function-getpitch">function getPitch</a></li><li><a href="#function-getuva">function getUVA</a></li><li><a href="#function-getuvb">function getUVB</a></li><li><a href="#function-getals">function getALS</a></li><li><a href="#function-getwhite">function getWhite</a></li><li><a href="#function-getlux">function getLux</a></li><li><a href="#function-getir_short">function getIR_Short</a></li><li><a href="#function-getir_mid">function getIR_Mid</a></li><li><a href="#function-gettemp">function getTemp</a></li><li><a href="#function-getheader">function getHeader</a></li><li><a href="#function-getstring">function getString</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#public-types">Public Types</a></li><li><a href="#public-functions">Public Functions</a></li><li><a href="#public-attributes">Public Attributes</a></li><li><a href="#detailed-description">Detailed Description</a></li><li><a href="#public-types-documentation">Public Types Documentation</a><ul><li><a href="#enum-component">enum Component</a></li></ul></li><li><a href="#public-functions-documentation">Public Functions Documentation</a><ul><li><a href="#function-libelle">function Libelle</a></li><li><a href="#function-begin">function begin</a></li><li><a href="#function-getroll">function getRoll</a></li><li><a href="#function-getpitch">function getPitch</a></li><li><a href="#function-getuva">function getUVA</a></li><li><a href="#function-getuvb">function getUVB</a></li><li><a href="#function-getals">function getALS</a></li><li><a href="#function-getwhite">function getWhite</a></li><li><a href="#function-getlux">function getLux</a></li><li><a href="#function-getir_short">function getIR_Short</a></li><li><a href="#function-getir_mid">function getIR_Mid</a></li><li><a href="#function-gettemp">function getTemp</a></li><li><a href="#function-getheader">function getHeader</a></li><li><a href="#function-getstring">function getString</a></li><li><a href="#function-updatemeasurements">function updateMeasurements</a></li><li><a href="#function-updateuv">function updateUV</a></li><li><a href="#function-updatelight">function updateLight</a></li><li><a href="#function-updateir">function updateIR</a></li><li><a href="#function-updatetilt">function updateTilt</a></li><li><a href="#function-setuvreadings">function setUVReadings</a></li><li><a href="#function-setlightreadings">function setLightReadings</a></li><li><a href="#function-setirreadings">function setIRReadings</a></li><li><a href="#function-settiltreadings">function setTiltReadings</a></li><li><a href="#function-setuvstats">function setUVStats</a></li><li><a href="#function-setlightstats">function setLightStats</a></li><li><a href="#function-setirstats">function setIRStats</a></li><li><a href="#function-settiltstats">function setTiltStats</a></li><li><a href="#function-getuvcount">function getUVCount</a></li><li><a href="#function-getlightcount">function getLightCount</a></li><li><a href="#function-getircount">function getIRCount</a></li><li><a href="#function-gettiltcount">function getTiltCount</a></li><li><a href="#function-getuvamean">function getUVAMean</a></li><li><a href="#function-getuvastd">function getUVAStd</a></li><li><a href="#function-getuvasterr">function getUVASterr</a></li><li><a href="#function-getuvamedian">function getUVAMedian</a></li><li><a href="#function-getuvbmean">function getUVBMean</a></li><li><a href="#function-getuvbstd">function getUVBStd</a></li><li><a href="#function-getuvbsterr">function getUVBSterr</a></li><li><a href="#function-getuvbmedian">function getUVBMedian</a></li><li><a href="#function-getalsmean">function getALSMean</a></li><li><a href="#function-getalsstd">function getALSStd</a></li><li><a href="#function-getalssterr">function getALSSterr</a></li><li><a href="#function-getalsmedian">function getALSMedian</a></li><li><a href="#function-getwhitemean">function getWhiteMean</a></li><li><a href="#function-getwhitestd">function getWhiteStd</a></li><li><a href="#function-getwhitesterr">function getWhiteSterr</a></li><li><a href="#function-getwhitemedian">function getWhiteMedian</a></li><li><a href="#function-getluxmean">function getLuxMean</a></li><li><a href="#function-getluxstd">function getLuxStd</a></li><li><a href="#function-getluxsterr">function getLuxSterr</a></li><li><a href="#function-getluxmedian">function getLuxMedian</a></li><li><a href="#function-getir_shortmean">function getIR_ShortMean</a></li><li><a href="#function-getir_shortstd">function getIR_ShortStd</a></li><li><a href="#function-getir_shortsterr">function getIR_ShortSterr</a></li><li><a href="#function-getir_shortmedian">function getIR_ShortMedian</a></li><li><a href="#function-getir_midmean">function getIR_MidMean</a></li><li><a href="#function-getir_midstd">function getIR_MidStd</a></li><li><a href="#function-getir_midsterr">function getIR_MidSterr</a></li><li><a href="#function-getir_midmedian">function getIR_MidMedian</a></li><li><a href="#function-gettempmean">function getTempMean</a></li><li><a href="#function-gettempstd">function getTempStd</a></li><li><a href="#function-gettempsterr">function getTempSterr</a></li><li><a href="#function-gettempmedian">function getTempMedian</a></li><li><a href="#function-getrollmean">function getRollMean</a></li><li><a href="#function-getrollstd">function getRollStd</a></li><li><a href="#function-getrollsterr">function getRollSterr</a></li><li><a href="#function-getrollmedian">function getRollMedian</a></li><li><a href="#function-getpitchmean">function getPitchMean</a></li><li><a href="#function-getpitchstd">function getPitchStd</a></li><li><a href="#function-getpitchsterr">function getPitchSterr</a></li><li><a href="#function-getpitchmedian">function getPitchMedian</a></li><li><a href="#function-printheader">function printHeader</a></li><li><a href="#function-printreading">function printReading</a></li><li><a href="#function-logreading">function logReading</a></li><li><a href="#function-beginreadings">function beginReadings</a></li><li><a href="#function-endreadings">function endReadings</a></li><li><a href="#function-faulted">function faulted</a></li><li><a href="#function-anyfault">function anyFault</a></li><li><a href="#function-faultchip">function faultChip</a></li><li><a href="#function-faultkind">function faultKind</a></li><li><a href="#function-printfault">function printFault</a></li><li><a href="#function-faultnote">function faultNote</a></li><li><a href="#function-beginfailure">function beginFailure</a></li><li><a href="#function-gethardwaremajor">function getHardwareMajor</a></li><li><a href="#function-gethardwareminor">function getHardwareMinor</a></li><li><a href="#function-getfirmwareversion">function getFirmwareVersion</a></li></ul></li><li><a href="#public-attributes-documentation">Public Attributes Documentation</a><ul><li><a href="#variable-default_address_up">variable DEFAULT_ADDRESS_UP</a></li><li><a href="#variable-default_address_down">variable DEFAULT_ADDRESS_DOWN</a></li></ul></li></ul>
             </nav>
           </aside>
         
-        <h2 id="public-functions">Public Functions</h2>
+        <p>Library for the <a href="">Libelle</a> multi-spectral shortwave pyranometer.  <a href="#detailed-description">More…</a></p>
+
+<p><code class="language-plaintext highlighter-rouge">#include &lt;Libelle.h&gt;</code></p>
+
+<h2 id="public-types">Public Types</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>enum uint8_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#enum-component">Component</a></strong> { VEML6075 = 0x01, VEML6030 = 0x02, ADS1115 = 0x04, ADXL343 = 0x08, BRIDGE = 0x07, ALL = 0x0F}<br />Chip groups a reading can cover (the spec’s chip table: 0 VEML6075, 1 VEML6030, 2 ADS1115, 3 ADXL343).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="public-functions">Public Functions</h2>
 
 <table>
   <thead>
@@ -245,58 +266,424 @@
     </tr>
     <tr>
       <td>bool</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-begin">begin</a></strong>()</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-begin">begin</a></strong>(uint8<em>t ADR</em> =0)<br />Begin communications with the <a href="/Libelle_Library/Classes/classLibelle/">Libelle</a> bridge and its accelerometer.</td>
     </tr>
     <tr>
       <td>float</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getroll">getRoll</a></strong>()</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getroll">getRoll</a></strong>(bool update =false)<br />Roll [deg] of the last <a href="">updateMeasurements()</a> (mean over its readings); LIBELLE_ERROR when none.</td>
     </tr>
     <tr>
       <td>float</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getpitch">getPitch</a></strong>()</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getpitch">getPitch</a></strong>(bool update =false)<br />Pitch [deg].</td>
     </tr>
     <tr>
-      <td>unsigned long</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuva">getUVA</a></strong>()</td>
+      <td>long</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuva">getUVA</a></strong>(bool update =false)<br />UVA, compensated counts (rounded mean); LIBELLE_ERROR when none.</td>
     </tr>
     <tr>
-      <td>unsigned long</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvb">getUVB</a></strong>()</td>
+      <td>long</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvb">getUVB</a></strong>(bool update =false)<br />UVB, compensated counts.</td>
     </tr>
     <tr>
-      <td>unsigned int</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getals">getALS</a></strong>()</td>
+      <td>long</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getals">getALS</a></strong>(bool update =false)<br />Ambient light, raw VEML6030 counts.</td>
     </tr>
     <tr>
-      <td>unsigned int</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getwhite">getWhite</a></strong>()</td>
-    </tr>
-    <tr>
-      <td>float</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getlux">getLux</a></strong>()</td>
+      <td>long</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getwhite">getWhite</a></strong>(bool update =false)<br />White (broadband), raw VEML6030 counts.</td>
     </tr>
     <tr>
       <td>float</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-short">getIR_Short</a></strong>()</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getlux">getLux</a></strong>(bool update =false)<br />Illuminance [lx]: ALS x auto-range multiplier x 0.0036, per reading.</td>
     </tr>
     <tr>
       <td>float</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-mid">getIR_Mid</a></strong>()</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-short">getIR_Short</a></strong>(bool update =false)<br />Near-IR (short) transimpedance output [V].</td>
     </tr>
     <tr>
       <td>float</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-gettemp">getTemp</a></strong>()</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-mid">getIR_Mid</a></strong>(bool update =false)<br />Near-IR (mid) transimpedance output [V].</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-gettemp">getTemp</a></strong>(bool update =false)<br />Housing temperature [C] from the thermistor (Steinhart-Hart, per reading).</td>
     </tr>
     <tr>
       <td>String</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getheader">getHeader</a></strong>()</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getheader">getHeader</a></strong>()<br />Column names with units, each followed by a comma, suffixed _u (UP) or _d (DOWN): “R_u [deg],P_u [deg],UVA_u,UVB_u,White_u,Vis_u [lx], IR_S_u,IR_M_u,PyroT_u [C],”, with std and sterr columns after a value when its chip group’s statistics are enabled and more than one reading is configured.</td>
     </tr>
     <tr>
       <td>String</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getstring">getString</a></strong>()</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getstring">getString</a></strong>()<br />Take a reading of everything (<a href="">updateMeasurements()</a>) and return the values in <a href="/Libelle_Library/Classes/classLibelle/#function-getheader">getHeader()</a>’s order, LIBELLE_ERROR where a reading failed.</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements</a></strong>(uint8_t component =ALL)<br />Take the configured number of readings of the selected chips and store them for the getters and the statistics.</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-updateuv">updateUV</a></strong>()<br />Take ONE reading of the VEML6075 (UVA, UVB) and append it to the readings.</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-updatelight">updateLight</a></strong>()<br />Take ONE reading of the VEML6030 (ALS, white, lux) and append it.</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-updateir">updateIR</a></strong>()<br />Take ONE reading of the ADS1115 (IR short, IR mid, temperature) and append it.</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-updatetilt">updateTilt</a></strong>()<br />Take ONE reading of the ADXL343 (roll, pitch) and append it.</td>
+    </tr>
+    <tr>
+      <td>uint16_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-setuvreadings">setUVReadings</a></strong>(uint16_t n)<br />Set how many VEML6075 readings <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a> takes (statistics are computed over them). Clamped to LIBELLE_UV_CAPACITY.</td>
+    </tr>
+    <tr>
+      <td>uint16_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-setlightreadings">setLightReadings</a></strong>(uint16_t n)<br />Set how many VEML6030 readings <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a> takes. Clamped to LIBELLE_LIGHT_CAPACITY.</td>
+    </tr>
+    <tr>
+      <td>uint16_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-setirreadings">setIRReadings</a></strong>(uint16_t n)<br />Set how many ADS1115 readings <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a> takes. Clamped to LIBELLE_IR_CAPACITY.</td>
+    </tr>
+    <tr>
+      <td>uint16_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-settiltreadings">setTiltReadings</a></strong>(uint16_t n)<br />Set how many ADXL343 readings <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a> takes. Clamped to LIBELLE_TILT_CAPACITY.</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-setuvstats">setUVStats</a></strong>(bool enable)<br />Enable or disable the UVA and UVB std and sterr columns in <a href="/Libelle_Library/Classes/classLibelle/#function-getstring">getString()</a>/getHeader().</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-setlightstats">setLightStats</a></strong>(bool enable)<br />Enable or disable the white and lux std and sterr columns.</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-setirstats">setIRStats</a></strong>(bool enable)<br />Enable or disable the IR and temperature std and sterr columns.</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-settiltstats">setTiltStats</a></strong>(bool enable)<br />Enable or disable the roll and pitch std and sterr columns.</td>
+    </tr>
+    <tr>
+      <td>uint16_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvcount">getUVCount</a></strong>()<br />Number of valid VEML6075 readings stored by the last <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a>.</td>
+    </tr>
+    <tr>
+      <td>uint16_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getlightcount">getLightCount</a></strong>()<br />Number of valid VEML6030 readings stored.</td>
+    </tr>
+    <tr>
+      <td>uint16_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getircount">getIRCount</a></strong>()<br />Number of valid ADS1115 readings stored.</td>
+    </tr>
+    <tr>
+      <td>uint16_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-gettiltcount">getTiltCount</a></strong>()<br />Number of valid ADXL343 readings stored.</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvamean">getUVAMean</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvastd">getUVAStd</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvasterr">getUVASterr</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvamedian">getUVAMedian</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvbmean">getUVBMean</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvbstd">getUVBStd</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvbsterr">getUVBSterr</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getuvbmedian">getUVBMedian</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getalsmean">getALSMean</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getalsstd">getALSStd</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getalssterr">getALSSterr</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getalsmedian">getALSMedian</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getwhitemean">getWhiteMean</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getwhitestd">getWhiteStd</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getwhitesterr">getWhiteSterr</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getwhitemedian">getWhiteMedian</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getluxmean">getLuxMean</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getluxstd">getLuxStd</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getluxsterr">getLuxSterr</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getluxmedian">getLuxMedian</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-shortmean">getIR_ShortMean</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-shortstd">getIR_ShortStd</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-shortsterr">getIR_ShortSterr</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-shortmedian">getIR_ShortMedian</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-midmean">getIR_MidMean</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-midstd">getIR_MidStd</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-midsterr">getIR_MidSterr</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getir-midmedian">getIR_MidMedian</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-gettempmean">getTempMean</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-gettempstd">getTempStd</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-gettempsterr">getTempSterr</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-gettempmedian">getTempMedian</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getrollmean">getRollMean</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getrollstd">getRollStd</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getrollsterr">getRollSterr</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getrollmedian">getRollMedian</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getpitchmean">getPitchMean</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getpitchstd">getPitchStd</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getpitchsterr">getPitchSterr</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getpitchmedian">getPitchMedian</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>size_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-printheader">printHeader</a></strong>(Print &amp; out)<br />Print the header matching <a href="">printReading()</a>: column names with units, each followed by a comma, for the chips selected by <a href="">beginReadings()</a>. No statistics columns: one reading has none.</td>
+    </tr>
+    <tr>
+      <td>size_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-printreading">printReading</a></strong>(Print &amp; out)<br />Print the stored reading of the selected chips, each value followed by a comma, in <a href="/Libelle_Library/Classes/classLibelle/#function-getstring">getString()</a>’s order. Does not acquire: call <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a> first, or use <a href="">logReading()</a>.</td>
+    </tr>
+    <tr>
+      <td>size_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-logreading">logReading</a></strong>(Print &amp; out)<br />Take ONE reading of the selected chips and print it: the one-reading primitive for collecting many readings to a file.</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-beginreadings">beginReadings</a></strong>(uint8_t component =ALL, uint16_t n =0)<br />Begin a run of readings, selecting which chips they cover.</td>
+    </tr>
+    <tr>
+      <td>void</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-endreadings">endReadings</a></strong>()<br />End a run of readings.</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-faulted">faulted</a></strong>(uint8_t chip)<br />True if the given chip (0 VEML6075, 1 VEML6030, 2 ADS1115, 3 ADXL343) was faulted in the last reading. The accelerometer fault is the library’s own on hardware v1.</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-anyfault">anyFault</a></strong>()<br />True if any chip was faulted in the last reading.</td>
+    </tr>
+    <tr>
+      <td>uint8_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-faultchip">faultChip</a></strong>()<br />Chip index of the latched fault (7 the unit); meaningful when <a href="">faultKind()</a> != 0.</td>
+    </tr>
+    <tr>
+      <td>uint8_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-faultkind">faultKind</a></strong>()<br />Kind of the latched fault, per the spec’s table (1 no acknowledge, 2 timeout, 3 checksum, 6 reset since configured, …).</td>
+    </tr>
+    <tr>
+      <td>size_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-printfault">printFault</a></strong>(Print &amp; out)<br />Print the latched fault as text, e.g. “VEML6075: no acknowledge”; “none” when there is no fault.</td>
+    </tr>
+    <tr>
+      <td>String</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-faultnote">faultNote</a></strong>()<br />The latched fault as one word for a note column: “VEML6075NoACK”, “UnitReset”; “UnitNone” when none.</td>
+    </tr>
+    <tr>
+      <td>String</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-beginfailure">beginFailure</a></strong>()<br />Why the last <a href="/Libelle_Library/Classes/classLibelle/#function-begin">begin()</a> refused, as one word: “NoACK”, “NotSchema1”, “WrongName”, “OldFirmware”, “NoAccel”; “None” after success.</td>
+    </tr>
+    <tr>
+      <td>uint8_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-gethardwaremajor">getHardwareMajor</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>uint8_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-gethardwareminor">getHardwareMinor</a></strong>()</td>
+    </tr>
+    <tr>
+      <td>uint8_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#function-getfirmwareversion">getFirmwareVersion</a></strong>()</td>
     </tr>
   </tbody>
 </table>
+
+<h2 id="public-attributes">Public Attributes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>constexpr uint8_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#variable-default-address-up">DEFAULT_ADDRESS_UP</a></strong> <br />Default I2C addresses: NW-Device-Specification Schema 1 ‘L’ (0x4C) facing UP; ‘L’ XOR 0x40 (0x0C) facing DOWN, by the solder jumper.</td>
+    </tr>
+    <tr>
+      <td>constexpr uint8_t</td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/#variable-default-address-down">DEFAULT_ADDRESS_DOWN</a></strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="detailed-description">Detailed Description</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Libelle</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Library for the <a href="">Libelle</a> multi-spectral shortwave pyranometer.</p>
+
+<p>Six spectral bands from UV-B through short-wave infrared, housing temperature, and tilt (roll and pitch) from an onboard accelerometer. The ATtiny841 bridge serves the light and infrared sensors as one Schema 1 register map; on hardware v1 the ADXL343 accelerometer sits on the controller’s I2C bus and the library reads it directly.</p>
+
+<h2 id="public-types-documentation">Public Types Documentation</h2>
+
+<h3 id="enum-component">enum Component</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Enumerator</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VEML6075</td>
+      <td>0x01</td>
+      <td>UVA, UVB.</td>
+    </tr>
+    <tr>
+      <td>VEML6030</td>
+      <td>0x02</td>
+      <td>ambient light, white, lux</td>
+    </tr>
+    <tr>
+      <td>ADS1115</td>
+      <td>0x04</td>
+      <td>IR short, IR mid, thermistor temperature.</td>
+    </tr>
+    <tr>
+      <td>ADXL343</td>
+      <td>0x08</td>
+      <td>roll, pitch (read on the controller bus on hardware v1)</td>
+    </tr>
+    <tr>
+      <td>BRIDGE</td>
+      <td>0x07</td>
+      <td>the three chips behind the ATtiny841</td>
+    </tr>
+    <tr>
+      <td>ALL</td>
+      <td>0x0F</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Chip groups a reading can cover (the spec’s chip table: 0 VEML6075, 1 VEML6030, 2 ADS1115, 3 ADXL343).</p>
 
 <h2 id="public-functions-documentation">Public Functions Documentation</h2>
 
@@ -309,72 +696,624 @@
 
 <h3 id="function-begin">function begin</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">begin</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">begin</span><span class="p">(</span>
+    <span class="kt">uint8_t</span> <span class="n">ADR_</span> <span class="o">=</span><span class="mi">0</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>Begin communications with the <a href="/Libelle_Library/Classes/classLibelle/">Libelle</a> bridge and its accelerometer.</p>
+
+<p><strong>Parameters</strong>:</p>
+
+<ul>
+  <li><strong>ADR_</strong> I2C address of the bridge; 0 (the default) selects DEFAULT_ADDRESS_UP or DEFAULT_ADDRESS_DOWN by the orientation.</li>
+</ul>
+
+<p><strong>Return</strong>: True if the bridge passed the three gates and the accelerometer acknowledged.</p>
+
+<p>Refuses the bridge unless Page 0 says Schema 1, the name “Libelle”, and a firmware patch of at least LIBELLE_FW_MIN_PATCH; <a href="/Libelle_Library/Classes/classLibelle/#function-beginfailure">beginFailure()</a> says which gate refused. Takes no reading.</p>
 
 <h3 id="function-getroll">function getRoll</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getRoll</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getRoll</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span><span class="nb">false</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>Roll [deg] of the last <a href="">updateMeasurements()</a> (mean over its readings); LIBELLE_ERROR when none.</p>
 
 <h3 id="function-getpitch">function getPitch</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getPitch</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getPitch</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span><span class="nb">false</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>Pitch [deg].</p>
 
 <h3 id="function-getuva">function getUVA</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getUVA</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="n">getUVA</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span><span class="nb">false</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>UVA, compensated counts (rounded mean); LIBELLE_ERROR when none.</p>
 
 <h3 id="function-getuvb">function getUVB</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getUVB</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="n">getUVB</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span><span class="nb">false</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>UVB, compensated counts.</p>
 
 <h3 id="function-getals">function getALS</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">getALS</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="n">getALS</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span><span class="nb">false</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>Ambient light, raw VEML6030 counts.</p>
 
 <h3 id="function-getwhite">function getWhite</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">getWhite</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="n">getWhite</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span><span class="nb">false</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>White (broadband), raw VEML6030 counts.</p>
 
 <h3 id="function-getlux">function getLux</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getLux</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getLux</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span><span class="nb">false</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>Illuminance [lx]: ALS x auto-range multiplier x 0.0036, per reading.</p>
 
 <h3 id="function-getir_short">function getIR_Short</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_Short</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_Short</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span><span class="nb">false</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>Near-IR (short) transimpedance output [V].</p>
 
 <h3 id="function-getir_mid">function getIR_Mid</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_Mid</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_Mid</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span><span class="nb">false</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>Near-IR (mid) transimpedance output [V].</p>
 
 <h3 id="function-gettemp">function getTemp</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getTemp</span><span class="p">()</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getTemp</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span><span class="nb">false</span>
+<span class="p">)</span>
 </code></pre></div></div>
+
+<p>Housing temperature [C] from the thermistor (Steinhart-Hart, per reading).</p>
 
 <h3 id="function-getheader">function getHeader</h3>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">getHeader</span><span class="p">()</span>
 </code></pre></div></div>
 
+<p>Column names with units, each followed by a comma, suffixed _u (UP) or _d (DOWN): “R_u [deg],P_u [deg],UVA_u,UVB_u,White_u,Vis_u [lx], IR_S_u,IR_M_u,PyroT_u [C],”, with std and sterr columns after a value when its chip group’s statistics are enabled and more than one reading is configured.</p>
+
 <h3 id="function-getstring">function getString</h3>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">getString</span><span class="p">()</span>
 </code></pre></div></div>
 
+<p>Take a reading of everything (<a href="">updateMeasurements()</a>) and return the values in <a href="/Libelle_Library/Classes/classLibelle/#function-getheader">getHeader()</a>’s order, LIBELLE_ERROR where a reading failed.</p>
+
+<h3 id="function-updatemeasurements">function updateMeasurements</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">updateMeasurements</span><span class="p">(</span>
+    <span class="kt">uint8_t</span> <span class="n">component</span> <span class="o">=</span><span class="n">ALL</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Take the configured number of readings of the selected chips and store them for the getters and the statistics.</p>
+
+<p><strong>Parameters</strong>:</p>
+
+<ul>
+  <li><strong>component</strong> Libelle::ALL (default) or any OR of the Component bits.</li>
+</ul>
+
+<p><strong>Return</strong>: true if every selected chip gave at least one valid reading</p>
+
+<p>Each bridge reading triggers the device and waits for its reading counter to advance (NW-Device-Specification handshake); N &gt; 1 is declared to the device as a batch first. With one reading of all three bridge chips, they are read in a single transaction. The accelerometer is read on the controller bus. The single-value getters return the mean of the readings taken; a chip the device reports faulted leaves its values at LIBELLE_ERROR.</p>
+
+<h3 id="function-updateuv">function updateUV</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">updateUV</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Take ONE reading of the VEML6075 (UVA, UVB) and append it to the readings.</p>
+
+<h3 id="function-updatelight">function updateLight</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">updateLight</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Take ONE reading of the VEML6030 (ALS, white, lux) and append it.</p>
+
+<h3 id="function-updateir">function updateIR</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">updateIR</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Take ONE reading of the ADS1115 (IR short, IR mid, temperature) and append it.</p>
+
+<h3 id="function-updatetilt">function updateTilt</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">updateTilt</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Take ONE reading of the ADXL343 (roll, pitch) and append it.</p>
+
+<h3 id="function-setuvreadings">function setUVReadings</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint16_t</span> <span class="n">setUVReadings</span><span class="p">(</span>
+    <span class="kt">uint16_t</span> <span class="n">n</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Set how many VEML6075 readings <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a> takes (statistics are computed over them). Clamped to LIBELLE_UV_CAPACITY.</p>
+
+<p><strong>Return</strong>: The number actually set.</p>
+
+<h3 id="function-setlightreadings">function setLightReadings</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint16_t</span> <span class="n">setLightReadings</span><span class="p">(</span>
+    <span class="kt">uint16_t</span> <span class="n">n</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Set how many VEML6030 readings <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a> takes. Clamped to LIBELLE_LIGHT_CAPACITY.</p>
+
+<h3 id="function-setirreadings">function setIRReadings</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint16_t</span> <span class="n">setIRReadings</span><span class="p">(</span>
+    <span class="kt">uint16_t</span> <span class="n">n</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Set how many ADS1115 readings <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a> takes. Clamped to LIBELLE_IR_CAPACITY.</p>
+
+<h3 id="function-settiltreadings">function setTiltReadings</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint16_t</span> <span class="n">setTiltReadings</span><span class="p">(</span>
+    <span class="kt">uint16_t</span> <span class="n">n</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Set how many ADXL343 readings <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a> takes. Clamped to LIBELLE_TILT_CAPACITY.</p>
+
+<h3 id="function-setuvstats">function setUVStats</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setUVStats</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">enable</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Enable or disable the UVA and UVB std and sterr columns in <a href="/Libelle_Library/Classes/classLibelle/#function-getstring">getString()</a>/getHeader().</p>
+
+<h3 id="function-setlightstats">function setLightStats</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setLightStats</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">enable</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Enable or disable the white and lux std and sterr columns.</p>
+
+<h3 id="function-setirstats">function setIRStats</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setIRStats</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">enable</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Enable or disable the IR and temperature std and sterr columns.</p>
+
+<h3 id="function-settiltstats">function setTiltStats</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">setTiltStats</span><span class="p">(</span>
+    <span class="kt">bool</span> <span class="n">enable</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Enable or disable the roll and pitch std and sterr columns.</p>
+
+<h3 id="function-getuvcount">function getUVCount</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint16_t</span> <span class="n">getUVCount</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Number of valid VEML6075 readings stored by the last <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a>.</p>
+
+<h3 id="function-getlightcount">function getLightCount</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint16_t</span> <span class="n">getLightCount</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Number of valid VEML6030 readings stored.</p>
+
+<h3 id="function-getircount">function getIRCount</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint16_t</span> <span class="n">getIRCount</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Number of valid ADS1115 readings stored.</p>
+
+<h3 id="function-gettiltcount">function getTiltCount</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint16_t</span> <span class="n">getTiltCount</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Number of valid ADXL343 readings stored.</p>
+
+<h3 id="function-getuvamean">function getUVAMean</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getUVAMean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getuvastd">function getUVAStd</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getUVAStd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getuvasterr">function getUVASterr</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getUVASterr</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getuvamedian">function getUVAMedian</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getUVAMedian</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getuvbmean">function getUVBMean</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getUVBMean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getuvbstd">function getUVBStd</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getUVBStd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getuvbsterr">function getUVBSterr</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getUVBSterr</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getuvbmedian">function getUVBMedian</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getUVBMedian</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getalsmean">function getALSMean</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getALSMean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getalsstd">function getALSStd</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getALSStd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getalssterr">function getALSSterr</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getALSSterr</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getalsmedian">function getALSMedian</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getALSMedian</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getwhitemean">function getWhiteMean</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getWhiteMean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getwhitestd">function getWhiteStd</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getWhiteStd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getwhitesterr">function getWhiteSterr</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getWhiteSterr</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getwhitemedian">function getWhiteMedian</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getWhiteMedian</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getluxmean">function getLuxMean</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getLuxMean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getluxstd">function getLuxStd</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getLuxStd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getluxsterr">function getLuxSterr</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getLuxSterr</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getluxmedian">function getLuxMedian</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getLuxMedian</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getir_shortmean">function getIR_ShortMean</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_ShortMean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getir_shortstd">function getIR_ShortStd</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_ShortStd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getir_shortsterr">function getIR_ShortSterr</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_ShortSterr</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getir_shortmedian">function getIR_ShortMedian</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_ShortMedian</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getir_midmean">function getIR_MidMean</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_MidMean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getir_midstd">function getIR_MidStd</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_MidStd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getir_midsterr">function getIR_MidSterr</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_MidSterr</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getir_midmedian">function getIR_MidMedian</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getIR_MidMedian</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-gettempmean">function getTempMean</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getTempMean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-gettempstd">function getTempStd</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getTempStd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-gettempsterr">function getTempSterr</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getTempSterr</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-gettempmedian">function getTempMedian</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getTempMedian</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getrollmean">function getRollMean</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getRollMean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getrollstd">function getRollStd</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getRollStd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getrollsterr">function getRollSterr</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getRollSterr</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getrollmedian">function getRollMedian</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getRollMedian</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getpitchmean">function getPitchMean</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getPitchMean</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getpitchstd">function getPitchStd</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getPitchStd</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getpitchsterr">function getPitchSterr</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getPitchSterr</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getpitchmedian">function getPitchMedian</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">getPitchMedian</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-printheader">function printHeader</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">size_t</span> <span class="n">printHeader</span><span class="p">(</span>
+    <span class="n">Print</span> <span class="o">&amp;</span> <span class="n">out</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Print the header matching <a href="">printReading()</a>: column names with units, each followed by a comma, for the chips selected by <a href="">beginReadings()</a>. No statistics columns: one reading has none.</p>
+
+<p><strong>Parameters</strong>:</p>
+
+<ul>
+  <li><strong>out</strong> Any Print destination (SdFat File, Serial, …).</li>
+</ul>
+
+<p><strong>Return</strong>: Bytes written.</p>
+
+<h3 id="function-printreading">function printReading</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">size_t</span> <span class="n">printReading</span><span class="p">(</span>
+    <span class="n">Print</span> <span class="o">&amp;</span> <span class="n">out</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Print the stored reading of the selected chips, each value followed by a comma, in <a href="/Libelle_Library/Classes/classLibelle/#function-getstring">getString()</a>’s order. Does not acquire: call <a href="/Libelle_Library/Classes/classLibelle/#function-updatemeasurements">updateMeasurements()</a> first, or use <a href="">logReading()</a>.</p>
+
+<p><strong>Return</strong>: Bytes written.</p>
+
+<h3 id="function-logreading">function logReading</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">size_t</span> <span class="n">logReading</span><span class="p">(</span>
+    <span class="n">Print</span> <span class="o">&amp;</span> <span class="n">out</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Take ONE reading of the selected chips and print it: the one-reading primitive for collecting many readings to a file.</p>
+
+<p><strong>Return</strong>: Bytes written.</p>
+
+<h3 id="function-beginreadings">function beginReadings</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">beginReadings</span><span class="p">(</span>
+    <span class="kt">uint8_t</span> <span class="n">component</span> <span class="o">=</span><span class="n">ALL</span><span class="p">,</span>
+    <span class="kt">uint16_t</span> <span class="n">n</span> <span class="o">=</span><span class="mi">0</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Begin a run of readings, selecting which chips they cover.</p>
+
+<p><strong>Parameters</strong>:</p>
+
+<ul>
+  <li><strong>component</strong> Libelle::ALL or any OR of the Component bits.</li>
+  <li><strong>n</strong> How many readings the run will take (the number of <a href="/Libelle_Library/Classes/classLibelle/#function-logreading">logReading()</a> calls to follow); with n &gt; 1 the bridge is told in advance (readings-requested word).</li>
+</ul>
+
+<h3 id="function-endreadings">function endReadings</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">endReadings</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>End a run of readings.</p>
+
+<h3 id="function-faulted">function faulted</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">faulted</span><span class="p">(</span>
+    <span class="kt">uint8_t</span> <span class="n">chip</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>True if the given chip (0 VEML6075, 1 VEML6030, 2 ADS1115, 3 ADXL343) was faulted in the last reading. The accelerometer fault is the library’s own on hardware v1.</p>
+
+<h3 id="function-anyfault">function anyFault</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">anyFault</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>True if any chip was faulted in the last reading.</p>
+
+<h3 id="function-faultchip">function faultChip</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint8_t</span> <span class="n">faultChip</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Chip index of the latched fault (7 the unit); meaningful when <a href="">faultKind()</a> != 0.</p>
+
+<h3 id="function-faultkind">function faultKind</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint8_t</span> <span class="n">faultKind</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Kind of the latched fault, per the spec’s table (1 no acknowledge, 2 timeout, 3 checksum, 6 reset since configured, …).</p>
+
+<h3 id="function-printfault">function printFault</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">size_t</span> <span class="n">printFault</span><span class="p">(</span>
+    <span class="n">Print</span> <span class="o">&amp;</span> <span class="n">out</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Print the latched fault as text, e.g. “VEML6075: no acknowledge”; “none” when there is no fault.</p>
+
+<h3 id="function-faultnote">function faultNote</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">faultNote</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>The latched fault as one word for a note column: “VEML6075NoACK”, “UnitReset”; “UnitNone” when none.</p>
+
+<h3 id="function-beginfailure">function beginFailure</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">beginFailure</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Why the last <a href="/Libelle_Library/Classes/classLibelle/#function-begin">begin()</a> refused, as one word: “NoACK”, “NotSchema1”, “WrongName”, “OldFirmware”, “NoAccel”; “None” after success.</p>
+
+<h3 id="function-gethardwaremajor">function getHardwareMajor</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint8_t</span> <span class="n">getHardwareMajor</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-gethardwareminor">function getHardwareMinor</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint8_t</span> <span class="n">getHardwareMinor</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="function-getfirmwareversion">function getFirmwareVersion</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">uint8_t</span> <span class="n">getFirmwareVersion</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="public-attributes-documentation">Public Attributes Documentation</h2>
+
+<h3 id="variable-default_address_up">variable DEFAULT_ADDRESS_UP</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">DEFAULT_ADDRESS_UP</span> <span class="o">=</span> <span class="mh">0x4C</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Default I2C addresses: NW-Device-Specification Schema 1 ‘L’ (0x4C) facing UP; ‘L’ XOR 0x40 (0x0C) facing DOWN, by the solder jumper.</p>
+
+<h3 id="variable-default_address_down">variable DEFAULT_ADDRESS_DOWN</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">DEFAULT_ADDRESS_DOWN</span> <span class="o">=</span> <span class="mh">0x0C</span><span class="p">;</span>
+</code></pre></div></div>
+
 <hr />
 
-<p>Updated on 2026-09-22 at 23:10:13 +0000</p>
+<p>Updated on 2026-09-23 at 16:11:16 +0000</p>
 
         
       </section>

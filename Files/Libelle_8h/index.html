@@ -225,7 +225,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc" aria-label="Table of contents">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#classes">Classes</a></li><li><a href="#types">Types</a></li><li><a href="#attributes">Attributes</a></li><li><a href="#types-documentation">Types Documentation</a><ul><li><a href="#enum-orientation">enum Orientation</a></li></ul></li><li><a href="#attributes-documentation">Attributes Documentation</a><ul><li><a href="#variable-libelle_error">variable LIBELLE_ERROR</a></li></ul></li><li><a href="#source-code">Source code</a></li></ul>
+              <ul class="toc__menu"><li><a href="#classes">Classes</a></li><li><a href="#types">Types</a></li><li><a href="#attributes">Attributes</a></li><li><a href="#defines">Defines</a></li><li><a href="#types-documentation">Types Documentation</a><ul><li><a href="#enum-orientation">enum Orientation</a></li></ul></li><li><a href="#attributes-documentation">Attributes Documentation</a><ul><li><a href="#variable-libelle_error">variable LIBELLE_ERROR</a></li></ul></li><li><a href="#macros-documentation">Macros Documentation</a><ul><li><a href="#define-libelle_fw_min_patch">define LIBELLE_FW_MIN_PATCH</a></li><li><a href="#define-libelle_uv_capacity">define LIBELLE_UV_CAPACITY</a></li><li><a href="#define-libelle_light_capacity">define LIBELLE_LIGHT_CAPACITY</a></li><li><a href="#define-libelle_ir_capacity">define LIBELLE_IR_CAPACITY</a></li><li><a href="#define-libelle_tilt_capacity">define LIBELLE_TILT_CAPACITY</a></li></ul></li><li><a href="#source-code">Source code</a></li></ul>
             </nav>
           </aside>
         
@@ -241,7 +241,7 @@
   <tbody>
     <tr>
       <td>class</td>
-      <td><strong><a href="/Libelle_Library/Classes/classLibelle/">Libelle</a></strong></td>
+      <td><strong><a href="/Libelle_Library/Classes/classLibelle/">Libelle</a></strong> <br />Library for the <a href="">Libelle</a> multi-spectral shortwave pyranometer.</td>
     </tr>
   </tbody>
 </table>
@@ -280,6 +280,39 @@
   </tbody>
 </table>
 
+<h2 id="defines">Defines</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/Libelle_Library/Files/Libelle_8h/#define-libelle-fw-min-patch">LIBELLE_FW_MIN_PATCH</a></strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/Libelle_Library/Files/Libelle_8h/#define-libelle-uv-capacity">LIBELLE_UV_CAPACITY</a></strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/Libelle_Library/Files/Libelle_8h/#define-libelle-light-capacity">LIBELLE_LIGHT_CAPACITY</a></strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/Libelle_Library/Files/Libelle_8h/#define-libelle-ir-capacity">LIBELLE_IR_CAPACITY</a></strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/Libelle_Library/Files/Libelle_8h/#define-libelle-tilt-capacity">LIBELLE_TILT_CAPACITY</a></strong></td>
+    </tr>
+  </tbody>
+</table>
+
 <h2 id="types-documentation">Types Documentation</h2>
 
 <h3 id="enum-orientation">enum Orientation</h3>
@@ -310,10 +343,39 @@
 
 <h3 id="variable-libelle_error">variable LIBELLE_ERROR</h3>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">constexpr</span> <span class="kt">float</span> <span class="n">LIBELLE_ERROR</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9999.0f</span><span class="p">;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">constexpr</span> <span class="kt">float</span> <span class="n">LIBELLE_ERROR</span> <span class="o">=</span> <span class="n">NW_ERROR</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>Sentinel returned by getRoll() and getPitch() when the accelerometer is unresponsive (all three axes return identical values).</p>
+<p>Sentinel returned by every getter when it has no reading: the accelerometer is unresponsive (all three axes return identical values), a chip faulted, or the device never answered. The same value as NW_ERROR.</p>
+
+<h2 id="macros-documentation">Macros Documentation</h2>
+
+<h3 id="define-libelle_fw_min_patch">define LIBELLE_FW_MIN_PATCH</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define LIBELLE_FW_MIN_PATCH 1
+</span></code></pre></div></div>
+
+<p>Lowest firmware patch (Page 0 byte 0x0A) this library accepts: patch 1 brought Schema 1 (Page 0, Block 0 handshake, data at 0x28-0x3D).</p>
+
+<h3 id="define-libelle_uv_capacity">define LIBELLE_UV_CAPACITY</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define LIBELLE_UV_CAPACITY 8
+</span></code></pre></div></div>
+
+<h3 id="define-libelle_light_capacity">define LIBELLE_LIGHT_CAPACITY</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define LIBELLE_LIGHT_CAPACITY 8
+</span></code></pre></div></div>
+
+<h3 id="define-libelle_ir_capacity">define LIBELLE_IR_CAPACITY</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define LIBELLE_IR_CAPACITY 8
+</span></code></pre></div></div>
+
+<h3 id="define-libelle_tilt_capacity">define LIBELLE_TILT_CAPACITY</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define LIBELLE_TILT_CAPACITY 8
+</span></code></pre></div></div>
 
 <h2 id="source-code">Source code</h2>
 
@@ -341,30 +403,114 @@ Distributed as-is; no warranty is given.
 <span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp">
 #include</span> <span class="cpf">"Wire.h"</span><span class="cp">
 #include</span> <span class="cpf">"math.h"</span><span class="cp">
+#include</span> <span class="cpf">&lt;NW_Core.h&gt;</span><span class="c1">   // NW_Core: NW_Device (Schema 1 protocol), NW_Readings, NW_Fault</span><span class="cp">
+</span>
+<span class="cp">#define LIBELLE_FW_MIN_PATCH 1
+</span>
+<span class="c1">// Readings per updateMeasurements() are kept in static arrays of this</span>
+<span class="c1">// capacity (one per chip group; no heap); set&lt;Group&gt;Readings(n) clamps to it.</span>
+<span class="c1">// Override before the include to trade RAM for a longer batch. The default is</span>
+<span class="c1">// 8, not the 16 of the other libraries: Libelle stores ten fields and a</span>
+<span class="c1">// logger usually carries two units (UP and DOWN).</span>
+<span class="cp">#ifndef LIBELLE_UV_CAPACITY
+</span>  <span class="cp">#define LIBELLE_UV_CAPACITY 8      // VEML6075: UVA, UVB
+#endif
+#ifndef LIBELLE_LIGHT_CAPACITY
+</span>  <span class="cp">#define LIBELLE_LIGHT_CAPACITY 8   // VEML6030: ALS, white, lux
+#endif
+#ifndef LIBELLE_IR_CAPACITY
+</span>  <span class="cp">#define LIBELLE_IR_CAPACITY 8      // ADS1115: IR short, IR mid, thermistor temperature
+#endif
+#ifndef LIBELLE_TILT_CAPACITY
+</span>  <span class="cp">#define LIBELLE_TILT_CAPACITY 8    // ADXL343: roll, pitch
+#endif
 </span>
 <span class="k">enum</span> <span class="n">Orientation</span> <span class="p">{</span> <span class="n">UP</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">DOWN</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">};</span>
 
-<span class="k">constexpr</span> <span class="kt">float</span> <span class="n">LIBELLE_ERROR</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9999.0f</span><span class="p">;</span>
+<span class="k">constexpr</span> <span class="kt">float</span> <span class="n">LIBELLE_ERROR</span> <span class="o">=</span> <span class="n">NW_ERROR</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">Libelle</span>
 <span class="p">{</span>
     <span class="nl">public:</span>
+        <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">DEFAULT_ADDRESS_UP</span> <span class="o">=</span> <span class="mh">0x4C</span><span class="p">;</span>
+        <span class="k">static</span> <span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">DEFAULT_ADDRESS_DOWN</span> <span class="o">=</span> <span class="mh">0x0C</span><span class="p">;</span>
+        <span class="k">enum</span> <span class="n">Component</span> <span class="o">:</span> <span class="kt">uint8_t</span> <span class="p">{</span>
+            <span class="n">VEML6075</span> <span class="o">=</span> <span class="mh">0x01</span><span class="p">,</span>  
+            <span class="n">VEML6030</span> <span class="o">=</span> <span class="mh">0x02</span><span class="p">,</span>  
+            <span class="n">ADS1115</span>  <span class="o">=</span> <span class="mh">0x04</span><span class="p">,</span>  
+            <span class="n">ADXL343</span>  <span class="o">=</span> <span class="mh">0x08</span><span class="p">,</span>  
+            <span class="n">BRIDGE</span>   <span class="o">=</span> <span class="mh">0x07</span><span class="p">,</span>  
+            <span class="n">ALL</span>      <span class="o">=</span> <span class="mh">0x0F</span>
+        <span class="p">};</span>
         <span class="n">Libelle</span><span class="p">(</span><span class="n">Orientation</span> <span class="n">orientation</span> <span class="o">=</span> <span class="n">UP</span><span class="p">);</span>
-        <span class="kt">bool</span> <span class="n">begin</span><span class="p">();</span>
-        <span class="kt">float</span> <span class="n">getRoll</span><span class="p">();</span>
-        <span class="kt">float</span> <span class="n">getPitch</span><span class="p">();</span>
-        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getUVA</span><span class="p">();</span>
-        <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">getUVB</span><span class="p">();</span>
-        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">getALS</span><span class="p">();</span>
-        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">getWhite</span><span class="p">();</span>
-        <span class="kt">float</span> <span class="n">getLux</span><span class="p">();</span>
-        <span class="kt">float</span> <span class="n">getIR_Short</span><span class="p">();</span>
-        <span class="kt">float</span> <span class="n">getIR_Mid</span><span class="p">();</span>
-        <span class="kt">float</span> <span class="n">getTemp</span><span class="p">();</span>
-        <span class="n">String</span> <span class="n">getHeader</span><span class="p">();</span>
-        <span class="n">String</span> <span class="n">getString</span><span class="p">();</span>
+        <span class="kt">bool</span> <span class="nf">begin</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">ADR_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="nf">getRoll</span><span class="p">(</span><span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="nf">getPitch</span><span class="p">(</span><span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="nf">getUVA</span><span class="p">(</span><span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="nf">getUVB</span><span class="p">(</span><span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="nf">getALS</span><span class="p">(</span><span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="nf">getWhite</span><span class="p">(</span><span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="nf">getLux</span><span class="p">(</span><span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="nf">getIR_Short</span><span class="p">(</span><span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="nf">getIR_Mid</span><span class="p">(</span><span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="kt">float</span> <span class="nf">getTemp</span><span class="p">(</span><span class="kt">bool</span> <span class="n">update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="n">String</span> <span class="nf">getHeader</span><span class="p">();</span>
+        <span class="n">String</span> <span class="nf">getString</span><span class="p">();</span>
 
-    <span class="nl">private:</span>
+        <span class="kt">bool</span> <span class="nf">updateMeasurements</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">component</span> <span class="o">=</span> <span class="n">ALL</span><span class="p">);</span>
+        <span class="kt">bool</span> <span class="nf">updateUV</span><span class="p">();</span>
+        <span class="kt">bool</span> <span class="nf">updateLight</span><span class="p">();</span>
+        <span class="kt">bool</span> <span class="nf">updateIR</span><span class="p">();</span>
+        <span class="kt">bool</span> <span class="nf">updateTilt</span><span class="p">();</span>
+        <span class="kt">uint16_t</span> <span class="nf">setUVReadings</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">n</span><span class="p">);</span>
+        <span class="kt">uint16_t</span> <span class="nf">setLightReadings</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">n</span><span class="p">);</span>
+        <span class="kt">uint16_t</span> <span class="nf">setIRReadings</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">n</span><span class="p">);</span>
+        <span class="kt">uint16_t</span> <span class="nf">setTiltReadings</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">n</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">setUVStats</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enable</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">setLightStats</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enable</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">setIRStats</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enable</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">setTiltStats</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enable</span><span class="p">);</span>
+        <span class="kt">uint16_t</span> <span class="nf">getUVCount</span><span class="p">();</span>
+        <span class="kt">uint16_t</span> <span class="nf">getLightCount</span><span class="p">();</span>
+        <span class="kt">uint16_t</span> <span class="nf">getIRCount</span><span class="p">();</span>
+        <span class="kt">uint16_t</span> <span class="nf">getTiltCount</span><span class="p">();</span>
+
+        <span class="c1">// --- Statistics getters ---</span>
+        <span class="c1">// Computed two-pass in 32-bit float over the readings stored by the last</span>
+        <span class="c1">// updateMeasurements() (NW_Readings); LIBELLE_ERROR when none. Lux,</span>
+        <span class="c1">// temperature, roll and pitch are stored per reading in their physical</span>
+        <span class="c1">// units, since none is linear in the register values.</span>
+        <span class="kt">float</span> <span class="nf">getUVAMean</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getUVAStd</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getUVASterr</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getUVAMedian</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="nf">getUVBMean</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getUVBStd</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getUVBSterr</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getUVBMedian</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="nf">getALSMean</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getALSStd</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getALSSterr</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getALSMedian</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="nf">getWhiteMean</span><span class="p">();</span>    <span class="kt">float</span> <span class="nf">getWhiteStd</span><span class="p">();</span>    <span class="kt">float</span> <span class="nf">getWhiteSterr</span><span class="p">();</span>    <span class="kt">float</span> <span class="nf">getWhiteMedian</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="nf">getLuxMean</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getLuxStd</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getLuxSterr</span><span class="p">();</span>      <span class="kt">float</span> <span class="nf">getLuxMedian</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="nf">getIR_ShortMean</span><span class="p">();</span> <span class="kt">float</span> <span class="nf">getIR_ShortStd</span><span class="p">();</span> <span class="kt">float</span> <span class="nf">getIR_ShortSterr</span><span class="p">();</span> <span class="kt">float</span> <span class="nf">getIR_ShortMedian</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="nf">getIR_MidMean</span><span class="p">();</span>   <span class="kt">float</span> <span class="nf">getIR_MidStd</span><span class="p">();</span>   <span class="kt">float</span> <span class="nf">getIR_MidSterr</span><span class="p">();</span>   <span class="kt">float</span> <span class="nf">getIR_MidMedian</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="nf">getTempMean</span><span class="p">();</span>     <span class="kt">float</span> <span class="nf">getTempStd</span><span class="p">();</span>     <span class="kt">float</span> <span class="nf">getTempSterr</span><span class="p">();</span>     <span class="kt">float</span> <span class="nf">getTempMedian</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="nf">getRollMean</span><span class="p">();</span>     <span class="kt">float</span> <span class="nf">getRollStd</span><span class="p">();</span>     <span class="kt">float</span> <span class="nf">getRollSterr</span><span class="p">();</span>     <span class="kt">float</span> <span class="nf">getRollMedian</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="nf">getPitchMean</span><span class="p">();</span>    <span class="kt">float</span> <span class="nf">getPitchStd</span><span class="p">();</span>    <span class="kt">float</span> <span class="nf">getPitchSterr</span><span class="p">();</span>    <span class="kt">float</span> <span class="nf">getPitchMedian</span><span class="p">();</span>
+
+        <span class="c1">// --- Reading interface (NW standard) ---</span>
+        <span class="kt">size_t</span> <span class="nf">printHeader</span><span class="p">(</span><span class="n">Print</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">);</span>
+        <span class="kt">size_t</span> <span class="nf">printReading</span><span class="p">(</span><span class="n">Print</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">);</span>
+        <span class="kt">size_t</span> <span class="nf">logReading</span><span class="p">(</span><span class="n">Print</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">beginReadings</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">component</span> <span class="o">=</span> <span class="n">ALL</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">endReadings</span><span class="p">();</span>
+
+        <span class="c1">// --- Faults (status byte, live; fault byte, latched) ---</span>
+        <span class="kt">bool</span> <span class="nf">faulted</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">chip</span><span class="p">);</span>
+        <span class="kt">bool</span> <span class="nf">anyFault</span><span class="p">();</span>
+        <span class="kt">uint8_t</span> <span class="nf">faultChip</span><span class="p">();</span>
+        <span class="kt">uint8_t</span> <span class="nf">faultKind</span><span class="p">();</span>
+        <span class="kt">size_t</span> <span class="nf">printFault</span><span class="p">(</span><span class="n">Print</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">);</span>
+        <span class="n">String</span> <span class="nf">faultNote</span><span class="p">();</span>
+        <span class="n">String</span> <span class="nf">beginFailure</span><span class="p">();</span>
+        <span class="kt">uint8_t</span> <span class="nf">getHardwareMajor</span><span class="p">();</span>
+        <span class="kt">uint8_t</span> <span class="nf">getHardwareMinor</span><span class="p">();</span>
+        <span class="kt">uint8_t</span> <span class="nf">getFirmwareVersion</span><span class="p">();</span>
+
+    <span class="k">private</span><span class="o">:</span>
         <span class="k">const</span> <span class="kt">float</span> <span class="n">LuxRes</span> <span class="o">=</span> <span class="mf">0.0036</span><span class="p">;</span>
 
         <span class="k">const</span> <span class="kt">float</span> <span class="n">A</span> <span class="o">=</span> <span class="mf">0.003354016</span><span class="p">;</span>
@@ -372,16 +518,49 @@ Distributed as-is; no warranty is given.
         <span class="k">const</span> <span class="kt">float</span> <span class="n">C</span> <span class="o">=</span> <span class="mf">1.019153E-05</span><span class="p">;</span>
         <span class="k">const</span> <span class="kt">float</span> <span class="n">D</span> <span class="o">=</span> <span class="mf">9.093712E-07</span><span class="p">;</span>
 
-        <span class="kt">uint8_t</span> <span class="n">ADR</span> <span class="o">=</span> <span class="mh">0x40</span><span class="p">;</span>
+        <span class="n">NW_Device</span> <span class="n">_dev</span><span class="p">;</span>
         <span class="kt">uint8_t</span> <span class="n">Accel_ADR</span> <span class="o">=</span> <span class="mh">0x1D</span><span class="p">;</span>
         <span class="n">Orientation</span> <span class="n">_orientation</span> <span class="o">=</span> <span class="n">UP</span><span class="p">;</span>
-        <span class="kt">bool</span> <span class="n">initAccel</span><span class="p">();</span>
-        <span class="kt">float</span> <span class="n">getG</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Axis</span><span class="p">);</span>
-        <span class="kt">float</span> <span class="n">TempConvert</span><span class="p">(</span><span class="kt">float</span> <span class="n">V</span><span class="p">,</span> <span class="kt">float</span> <span class="n">Vcc</span><span class="p">,</span> <span class="kt">float</span> <span class="n">R</span><span class="p">,</span> <span class="kt">float</span> <span class="n">A</span><span class="p">,</span> <span class="kt">float</span> <span class="n">B</span><span class="p">,</span> <span class="kt">float</span> <span class="n">C</span><span class="p">,</span> <span class="kt">float</span> <span class="n">D</span><span class="p">,</span> <span class="kt">float</span> <span class="n">R25</span><span class="p">);</span>
-        <span class="kt">void</span> <span class="n">PrintAllRegs</span><span class="p">();</span>
-        <span class="kt">bool</span> <span class="n">WriteByte</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Adr</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Pos</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Val</span><span class="p">);</span>
-        <span class="kt">uint8_t</span> <span class="n">ReadByte</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Adr</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Pos</span><span class="p">);</span>
-        <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">ReadWord</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Adr</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Pos</span><span class="p">);</span>
+        <span class="kt">bool</span> <span class="n">_bridgeOk</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>   <span class="c1">// the bridge passed begin()'s gates</span>
+        <span class="kt">bool</span> <span class="n">_accelOk</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>    <span class="c1">// the accelerometer acknowledged at begin()</span>
+        <span class="kt">bool</span> <span class="n">_accelFault</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// the last accelerometer reading failed (no acknowledge or all axes equal)</span>
+        <span class="c1">// Means of the last updateMeasurements() (or the last logReading()); LIBELLE_ERROR when none.</span>
+        <span class="kt">float</span> <span class="n">_roll</span> <span class="o">=</span> <span class="n">LIBELLE_ERROR</span><span class="p">,</span> <span class="n">_pitch</span> <span class="o">=</span> <span class="n">LIBELLE_ERROR</span><span class="p">;</span>       <span class="c1">// [deg]</span>
+        <span class="kt">long</span> <span class="n">_uva</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">LIBELLE_ERROR</span><span class="p">,</span> <span class="n">_uvb</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">LIBELLE_ERROR</span><span class="p">;</span> <span class="c1">// compensated counts</span>
+        <span class="kt">long</span> <span class="n">_als</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">LIBELLE_ERROR</span><span class="p">,</span> <span class="n">_white</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">LIBELLE_ERROR</span><span class="p">;</span> <span class="c1">// raw counts</span>
+        <span class="kt">float</span> <span class="n">_lux</span> <span class="o">=</span> <span class="n">LIBELLE_ERROR</span><span class="p">;</span>                                  <span class="c1">// [lx]</span>
+        <span class="kt">float</span> <span class="n">_irShort</span> <span class="o">=</span> <span class="n">LIBELLE_ERROR</span><span class="p">,</span> <span class="n">_irMid</span> <span class="o">=</span> <span class="n">LIBELLE_ERROR</span><span class="p">;</span>      <span class="c1">// [V]</span>
+        <span class="kt">float</span> <span class="n">_temp</span> <span class="o">=</span> <span class="n">LIBELLE_ERROR</span><span class="p">;</span>                                 <span class="c1">// [C]</span>
+        <span class="c1">// Readings as the bridge serves them where the scaling is linear (raw</span>
+        <span class="c1">// counts), else in physical units, one array per field.</span>
+        <span class="n">NW_Readings</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="p">,</span> <span class="n">LIBELLE_UV_CAPACITY</span><span class="o">&gt;</span> <span class="n">_uvaReadings</span><span class="p">;</span>
+        <span class="n">NW_Readings</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="p">,</span> <span class="n">LIBELLE_UV_CAPACITY</span><span class="o">&gt;</span> <span class="n">_uvbReadings</span><span class="p">;</span>
+        <span class="n">NW_Readings</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="p">,</span> <span class="n">LIBELLE_LIGHT_CAPACITY</span><span class="o">&gt;</span> <span class="n">_alsReadings</span><span class="p">;</span>
+        <span class="n">NW_Readings</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="p">,</span> <span class="n">LIBELLE_LIGHT_CAPACITY</span><span class="o">&gt;</span> <span class="n">_whiteReadings</span><span class="p">;</span>
+        <span class="n">NW_Readings</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="n">LIBELLE_LIGHT_CAPACITY</span><span class="o">&gt;</span> <span class="n">_luxReadings</span><span class="p">;</span>     <span class="c1">// [lx]</span>
+        <span class="n">NW_Readings</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="p">,</span> <span class="n">LIBELLE_IR_CAPACITY</span><span class="o">&gt;</span> <span class="n">_irShortReadings</span><span class="p">;</span>
+        <span class="n">NW_Readings</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="p">,</span> <span class="n">LIBELLE_IR_CAPACITY</span><span class="o">&gt;</span> <span class="n">_irMidReadings</span><span class="p">;</span>
+        <span class="n">NW_Readings</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="n">LIBELLE_IR_CAPACITY</span><span class="o">&gt;</span> <span class="n">_tempReadings</span><span class="p">;</span>       <span class="c1">// [C]</span>
+        <span class="n">NW_Readings</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="n">LIBELLE_TILT_CAPACITY</span><span class="o">&gt;</span> <span class="n">_rollReadings</span><span class="p">;</span>     <span class="c1">// [deg]</span>
+        <span class="n">NW_Readings</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="n">LIBELLE_TILT_CAPACITY</span><span class="o">&gt;</span> <span class="n">_pitchReadings</span><span class="p">;</span>    <span class="c1">// [deg]</span>
+        <span class="n">NW_ReadingsConfig</span> <span class="n">_uvCfg</span><span class="p">;</span>    <span class="c1">// Readings per updateMeasurements() and stats columns, VEML6075 group</span>
+        <span class="n">NW_ReadingsConfig</span> <span class="n">_lightCfg</span><span class="p">;</span> <span class="c1">// VEML6030 group</span>
+        <span class="n">NW_ReadingsConfig</span> <span class="n">_irCfg</span><span class="p">;</span>    <span class="c1">// ADS1115 group</span>
+        <span class="n">NW_ReadingsConfig</span> <span class="n">_tiltCfg</span><span class="p">;</span>  <span class="c1">// ADXL343 group</span>
+        <span class="kt">uint8_t</span> <span class="n">_component</span> <span class="o">=</span> <span class="n">ALL</span><span class="p">;</span>    <span class="c1">// Selection of the current beginReadings() run</span>
+        <span class="kt">bool</span> <span class="nf">initAccel</span><span class="p">();</span>
+        <span class="kt">float</span> <span class="nf">getG</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Axis</span><span class="p">);</span>
+        <span class="kt">bool</span> <span class="nf">readUV</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">d</span><span class="p">);</span>     <span class="c1">// Append one served VEML6075 reading (8 bytes from 0x30) unless faulted</span>
+        <span class="kt">bool</span> <span class="nf">readLight</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">d</span><span class="p">);</span>  <span class="c1">// Append one served VEML6030 reading (6 bytes from 0x28) unless faulted</span>
+        <span class="kt">bool</span> <span class="nf">readIR</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">d</span><span class="p">);</span>     <span class="c1">// Append one served ADS1115 reading (6 bytes from 0x38) unless faulted</span>
+        <span class="kt">bool</span> <span class="nf">readData</span><span class="p">();</span>             <span class="c1">// One 22-byte read of the three bridge chips, appended</span>
+        <span class="kt">void</span> <span class="nf">resetReadings</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">component</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">summarise</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">component</span><span class="p">);</span> <span class="c1">// Means into the single-value fields, LIBELLE_ERROR when no reading</span>
+        <span class="n">NW_Fault</span> <span class="nf">fault</span><span class="p">();</span>            <span class="c1">// The bridge's latched fault, or the library's own for the accelerometer</span>
+        <span class="n">String</span> <span class="nf">column</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">unit</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">stats</span><span class="p">);</span> <span class="c1">// "R_u [deg]," plus std and sterr columns</span>
+        <span class="kt">float</span> <span class="nf">TempConvert</span><span class="p">(</span><span class="kt">float</span> <span class="n">V</span><span class="p">,</span> <span class="kt">float</span> <span class="n">Vcc</span><span class="p">,</span> <span class="kt">float</span> <span class="n">R</span><span class="p">,</span> <span class="kt">float</span> <span class="n">A</span><span class="p">,</span> <span class="kt">float</span> <span class="n">B</span><span class="p">,</span> <span class="kt">float</span> <span class="n">C</span><span class="p">,</span> <span class="kt">float</span> <span class="n">D</span><span class="p">,</span> <span class="kt">float</span> <span class="n">R25</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">PrintAllRegs</span><span class="p">();</span>
+        <span class="kt">bool</span> <span class="nf">WriteByte</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">Adr</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Pos</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Val</span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="cp">#endif
@@ -389,7 +568,7 @@ Distributed as-is; no warranty is given.
 
 <hr />
 
-<p>Updated on 2026-09-22 at 23:10:13 +0000</p>
+<p>Updated on 2026-09-23 at 16:11:16 +0000</p>
 
         
       </section>
