@@ -28,7 +28,7 @@ In addition, the board reports:
 
 ## Hardware
 
-The shortwave module aggregates its sensors through an ATtiny841 acting as an I2C bridge. The host microcontroller communicates with a single I2C address (0x40 facing up, 0x41 facing down); the bridge handles all internal sensor communication.
+The shortwave module aggregates its sensors through an ATtiny841 acting as an I2C bridge. The host microcontroller communicates with a single I2C address (0x4C facing up, 0x0C facing down, per the [NW-Device-Specification](https://github.com/NorthernWidget/NW-Device-Specification) Schema 1 registry; firmware before Schema 1 answered at 0x40 and 0x41); the bridge handles all internal sensor communication. On hardware v1 the ADXL343 accelerometer sits on the host's I2C bus (0x1D facing up, 0x53 facing down) and the library reads it directly.
 
 Two modules can be stacked on the same I2C bus using the orientation flag — one facing skyward and one facing the ground — for net shortwave radiation measurements.
 
@@ -59,19 +59,27 @@ void loop() {
 
 | Method | Returns | Description |
 |--------|---------|-------------|
-| `begin()` | `bool` | Initialize sensor and I2C bus; returns true on success, false if either the sensor bridge or accelerometer is unreachable; includes 2 ms settling time for accelerometer startup |
+| `begin(address = 0)` | `bool` | Initialize sensor and I2C bus; returns true on success, false if the bridge is not a Schema 1 Libelle at firmware patch `LIBELLE_FW_MIN_PATCH` or later, or the accelerometer is unreachable (`beginFailure()` says which); includes 2 ms settling time for accelerometer startup; 0 selects the address by orientation |
 | `getHeader()` | `String` | Comma-separated column names with units |
-| `getString()` | `String` | Comma-separated measurement values |
-| `getUVA()` | `unsigned long` | Raw UV-A counts |
-| `getUVB()` | `unsigned long` | Raw UV-B counts |
-| `getALS()` | `unsigned int` | Raw ambient light sensor counts |
-| `getWhite()` | `unsigned int` | Raw broadband counts |
+| `getString()` | `String` | Takes a reading of everything (`updateMeasurements()`) and returns the comma-separated measurement values; `-9999` where a reading failed |
+| `getUVA()` | `long` | UV-A compensated counts |
+| `getUVB()` | `long` | UV-B compensated counts |
+| `getALS()` | `long` | Raw ambient light sensor counts |
+| `getWhite()` | `long` | Raw broadband counts |
 | `getLux()` | `float` | Illuminance (lux) |
 | `getIR_Short()` | `float` | VEMD1060X01 (~700–1100 nm) transimpedance output voltage (V); 47 kΩ feedback resistor, ADS1115 at ±4.096 V FSR |
 | `getIR_Mid()` | `float` | SD003-151-001 (~1000–1700 nm) transimpedance output voltage (V); 1 MΩ feedback resistor, ADS1115 at ±4.096 V FSR |
 | `getTemp()` | `float` | Housing temperature (°C) |
 | `getRoll()` | `float` | Roll angle from accelerometer (degrees); uses all three axes; returns `LIBELLE_ERROR` (-9999) if the accelerometer is unresponsive |
 | `getPitch()` | `float` | Pitch angle from accelerometer (degrees); uses all three axes; ADXL343 outputs at 100 Hz — readings taken less than 10 ms apart return the same sample; returns `LIBELLE_ERROR` (-9999) if the accelerometer is unresponsive |
+
+The value getters return the stored reading, the mean over the readings of the last `updateMeasurements()`; pass `true` to take a fresh one first. Every getter returns `LIBELLE_ERROR` (-9999) when it has no reading: the chip faulted, the device never answered, or the accelerometer was unresponsive.
+
+### Readings, statistics, and faults
+
+`setUVReadings(n)`, `setLightReadings(n)`, `setIRReadings(n)` and `setTiltReadings(n)` set how many readings of the VEML6075 (UVA, UVB), the VEML6030 (ALS, white, lux), the ADS1115 (IR short, IR mid, temperature) and the ADXL343 (roll, pitch) each `updateMeasurements()` takes (clamped to `LIBELLE_UV_CAPACITY` and its siblings, default 8; override before the include). The values printed are then the means, and `getUVAMean()`, `getUVAStd()`, `getUVASterr()`, `getUVAMedian()`, the same for `UVB`, `ALS`, `White`, `Lux`, `IR_Short`, `IR_Mid`, `Temp`, `Roll` and `Pitch`, plus `getUVCount()`, `getLightCount()`, `getIRCount()` and `getTiltCount()`, read the stored readings. With `setUVStats(true)` and its siblings the std and sterr columns join `getHeader()` and `getString()`. `updateMeasurements(Libelle::VEML6030)`, or any OR of the `Component` bits, reads part of the board. For one row per reading to a file, `beginReadings(component, n)`, `printHeader(out)`, `logReading(out)` n times, `endReadings()`, to any `Print` (an SdFat `File`, `Serial`).
+
+Faults, for sketches that want them: `faulted(chip)` (0 VEML6075, 1 VEML6030, 2 ADS1115, 3 ADXL343), `anyFault()`, `faultChip()`, `faultKind()`, `printFault(Serial)`, `faultNote()` (one word, e.g. `VEML6075NoACK`, for a logger's note column). The bridge latches the faults of its three chips; the accelerometer's is the library's own on hardware v1. `begin()` refuses a device that is not Schema 1, not a Libelle, or below firmware patch `LIBELLE_FW_MIN_PATCH`; `beginFailure()` says which (`NoACK`, `NotSchema1`, `WrongName`, `OldFirmware`, `NoAccel`). Requires the [NW_Core](https://github.com/NorthernWidget/NW_Core) library and Libelle firmware patch 1 or later; firmware before Schema 1 is not supported by this version.
 
 ### IR channel units and calibration
 
