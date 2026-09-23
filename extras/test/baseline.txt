@@ -1,0 +1,19 @@
+begin=1
+[UP, level]
+header: R_u [deg],P_u [deg],UVA_u,UVB_u,White_u,Vis_u [lx],IR_S_u,IR_M_u,PyroT_u [C],
+string: 0.00,0.00,12345,678,3000,115.20,1.25,2.50,25.00,
+getters: uva=12345 uvb=678 als=4000 white=3000 lux=115.2000 irS=1.2500 irM=2.5000 temp=25.0000 roll=0.0000 pitch=0.0000
+[UP, tilted]
+header: R_u [deg],P_u [deg],UVA_u,UVB_u,White_u,Vis_u [lx],IR_S_u,IR_M_u,PyroT_u [C],
+string: 23.02,11.27,12345,678,3000,115.20,1.25,2.50,25.00,
+getters: uva=12345 uvb=678 als=4000 white=3000 lux=115.2000 irS=1.2500 irM=2.5000 temp=25.0000 roll=23.0187 pitch=11.2748
+begin=1
+[DOWN]
+header: R_d [deg],P_d [deg],UVA_d,UVB_d,White_d,Vis_d [lx],IR_S_d,IR_M_d,PyroT_d [C],
+string: 89.78,0.01,1000000,2000000,1,235.93,0.00,8.19,-28.55,
+getters: uva=1000000 uvb=2000000 als=65535 white=1 lux=235.9260 irS=0.0000 irM=8.1919 temp=-28.5496 roll=89.7812 pitch=0.0087
+begin with no sensor: 0
+[absent]
+header: R_u [deg],P_u [deg],UVA_u,UVB_u,White_u,Vis_u [lx],IR_S_u,IR_M_u,PyroT_u [C],
+string: -9999.00,-9999.00,4294967295,4294967295,65535,15461410.00,8.19,8.19,-nan,
+getters: uva=4294967295 uvb=4294967295 als=65535 white=65535 lux=15461410.0000 irS=8.1919 irM=8.1919 temp=-nan roll=-9999.0000 pitch=-9999.0000
