@@ -1,6 +1,6 @@
 #include <Libelle.h>
 
-Libelle pyro;
+Libelle pyro;   // facing UP: bridge at 0x4C, accelerometer at 0x1D
 
 void setup() {
     Serial.begin(9600);
@@ -8,7 +8,8 @@ void setup() {
     Serial.println("Measures UV-B, UV-A, visible, near-IR, tilt, and temperature.");
 
     if (!pyro.begin()) {
-        Serial.println("Libelle not found. Check wiring.");
+        Serial.print("Libelle not found: ");
+        Serial.println(pyro.beginFailure());  // NoACK, NotSchema1, WrongName, OldFirmware, NoAccel
         while (1);
     }
 
@@ -16,6 +17,10 @@ void setup() {
 }
 
 void loop() {
-    Serial.println(pyro.getString());
+    Serial.println(pyro.getString());  // -9999 where a reading failed
+    if (pyro.anyFault()) {
+        pyro.printFault(Serial);  // e.g. "VEML6075: no acknowledge"
+        Serial.println();
+    }
     delay(1000);
 }

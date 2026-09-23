@@ -5,7 +5,7 @@ Libelle pyroUp(UP);
 Libelle pyroDown(DOWN);
 
 String Header = "";
-uint8_t I2CVals[2] = {0x40, 0x41};
+uint8_t I2CVals[2] = {Libelle::DEFAULT_ADDRESS_UP, Libelle::DEFAULT_ADDRESS_DOWN}; // 0x4C and 0x0C (Schema 1)
 unsigned long UpdateRate = 60;
 
 Margay Logger(Model_1v0);

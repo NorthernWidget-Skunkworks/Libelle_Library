@@ -6,7 +6,8 @@ Libelle pyroUp(UP);
 void setup() {
 	Serial.begin(38400);
 	if (!pyroUp.begin()) {
-		Serial.println("Libelle not found. Check wiring.");
+		Serial.print("Libelle not found: ");
+		Serial.println(pyroUp.beginFailure());  // NoACK, NotSchema1, WrongName, OldFirmware, NoAccel
 		while (1);
 	}
 	Serial.println(pyroUp.getHeader());
