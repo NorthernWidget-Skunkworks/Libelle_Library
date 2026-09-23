@@ -20,15 +20,15 @@ Distributed as-is; no warranty is given.
 #include "math.h"
 #include "Libelle.h"
 
-// Schema 1 Page 1 register addresses (NW-Device-Specification, Libelle appendix)
-static constexpr uint8_t ALS_ADR      = 0x28;  // Block 1, VEML6030: ALS, white, lux multiplier (uint16 each)
-static constexpr uint8_t WHITE_ADR    = 0x2A;
-static constexpr uint8_t LUXMUL_ADR   = 0x2C;
-static constexpr uint8_t UVA_ADR      = 0x30;  // Block 2, VEML6075: UVA, UVB (int32 each)
-static constexpr uint8_t UVB_ADR      = 0x34;
-static constexpr uint8_t IR_SHORT_ADR = 0x38;  // Block 3, ADS1115: IR short, IR mid, thermistor (uint16 each)
-static constexpr uint8_t IR_MID_ADR   = 0x3A;
-static constexpr uint8_t THERM_ADR    = 0x3C;
+// Schema 1 Page 2 register addresses (NW-Device-Specification, Libelle appendix)
+static constexpr uint8_t ALS_ADR      = 0x48;  // Block 1, VEML6030: ALS, white, lux multiplier (uint16 each)
+static constexpr uint8_t WHITE_ADR    = 0x4A;
+static constexpr uint8_t LUXMUL_ADR   = 0x4C;
+static constexpr uint8_t UVA_ADR      = 0x50;  // Block 2, VEML6075: UVA, UVB (int32 each)
+static constexpr uint8_t UVB_ADR      = 0x54;
+static constexpr uint8_t IR_SHORT_ADR = 0x58;  // Block 3, ADS1115: IR short, IR mid, thermistor (uint16 each)
+static constexpr uint8_t IR_MID_ADR   = 0x5A;
+static constexpr uint8_t THERM_ADR    = 0x5C;
 
 // ADXL343 accelerometer data register addresses
 static constexpr uint8_t XAXIS = 0x32;
@@ -242,7 +242,7 @@ bool Libelle::readIR(uint8_t* d)
 
 bool Libelle::readData()
 {
-  // Blocks 1-3 are consecutive (0x28-0x3D): one read.
+  // Blocks 1-3 are consecutive (0x48-0x5D): one read.
   uint8_t d[22];
   if(!_dev.readData(NW_REG_DATA, d, 22)) return false;
   readLight(d);
@@ -488,9 +488,9 @@ String Libelle::reportNote()
 
 void Libelle::PrintAllRegs()
 {
-  uint8_t Regs[64]; // Page 0 (identity) and Page 1 (status, control, data)
-  _dev.readBytes(0x00, Regs, 64);
-  for(int i = 0; i < 64; i++) {
+  uint8_t Regs[96]; // Page 0 (identity), Page 1 (calibration) and Page 2 (status, control, data)
+  _dev.readBytes(0x00, Regs, 96);
+  for(int i = 0; i < 96; i++) {
     Serial.print("Reg"); Serial.print(i, HEX); Serial.print(":\t");
     Serial.println(Regs[i]);
   }

@@ -25,7 +25,7 @@ Distributed as-is; no warranty is given.
 #include <NW_Core.h>   // NW_Core: NW_Device (Schema 1 protocol), NW_Readings, NW_Report
 
 /// Lowest firmware patch (Page 0 byte 0x0A) this library accepts: patch 1
-/// brought Schema 1 (Page 0, Block 0 handshake, data at 0x28-0x3D).
+/// brought Schema 1 (Page 0, Block 0 handshake, data at 0x48-0x5D).
 #define LIBELLE_FW_MIN_PATCH 1
 
 // Readings per updateMeasurements() are kept in static arrays of this
@@ -276,9 +276,9 @@ class Libelle
 		uint8_t _component = ALL;    // Selection of the current beginReadings() run
 		bool initAccel();
 		float getG(uint8_t Axis);
-		bool readUV(uint8_t* d);     // Append one served VEML6075 reading (8 bytes from 0x30) unless faulted
-		bool readLight(uint8_t* d);  // Append one served VEML6030 reading (6 bytes from 0x28) unless faulted
-		bool readIR(uint8_t* d);     // Append one served ADS1115 reading (6 bytes from 0x38) unless faulted
+		bool readUV(uint8_t* d);     // Append one served VEML6075 reading (8 bytes from 0x50) unless faulted
+		bool readLight(uint8_t* d);  // Append one served VEML6030 reading (6 bytes from 0x48) unless faulted
+		bool readIR(uint8_t* d);     // Append one served ADS1115 reading (6 bytes from 0x58) unless faulted
 		bool readData();             // One 22-byte read of the three bridge chips, appended
 		void resetReadings(uint8_t component);
 		void summarise(uint8_t component); // Means into the single-value fields, LIBELLE_ERROR when no reading
