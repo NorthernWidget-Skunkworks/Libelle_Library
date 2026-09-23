@@ -12,8 +12,37 @@ begin=1
 header: R_d [deg],P_d [deg],UVA_d,UVB_d,White_d,Vis_d [lx],IR_S_d,IR_M_d,PyroT_d [C],
 string: 89.78,0.01,1000000,2000000,1,235.93,0.00,8.19,-28.55,
 getters: uva=1000000 uvb=2000000 als=65535 white=1 lux=235.9260 irS=0.0000 irM=8.1919 temp=-28.5496 roll=89.7812 pitch=0.0087
-begin with no sensor: 0
+begin with no sensor: 0 failure=NoACK
 [absent]
 header: R_u [deg],P_u [deg],UVA_u,UVB_u,White_u,Vis_u [lx],IR_S_u,IR_M_u,PyroT_u [C],
-string: -9999.00,-9999.00,4294967295,4294967295,65535,15461410.00,8.19,8.19,-nan,
-getters: uva=4294967295 uvb=4294967295 als=65535 white=65535 lux=15461410.0000 irS=8.1919 irM=8.1919 temp=-nan roll=-9999.0000 pitch=-9999.0000
+string: -9999.00,-9999.00,-9999,-9999,-9999,-9999.00,-9999.00,-9999.00,-9999.00,
+getters: uva=-9999 uvb=-9999 als=-9999 white=-9999 lux=-9999.0000 irS=-9999.0000 irM=-9999.0000 temp=-9999.0000 roll=-9999.0000 pitch=-9999.0000
+[wrong name] begin=0 failure=WrongName
+[schema 0x00] begin=0 failure=NotSchema1
+[fw patch 0 < min 1] begin=0 fw=0 failure=OldFirmware
+[versions] begin=1 hw=0.1 fw=1 failure=None
+[DOWN unit at an explicit 0x4C] begin=0 failure=NoAccel
+[no accelerometer] begin=0 failure=NoAccel
+[no accelerometer] string: -9999.00,-9999.00,12345,678,3000,115.20,1.25,2.50,25.00, faulted(3)=1 any=1 note='ADXL343NoACK'
+[VEML6075 no ACK] update=0 faulted(0)=1 faulted(1)=0 faulted(2)=0 any=1 chip=0 kind=1 text='VEML6075: no acknowledge' note='VEML6075NoACK'
+[VEML6075 no ACK] string: 0.00,0.00,-9999,-9999,3000,115.20,1.25,2.50,25.00,
+[ADS1115 timeout] string: 0.00,0.00,12345,678,3000,115.20,-9999.00,-9999.00,-9999.00, note='ADS1115Timeout'
+[unit reset] update=1 any=0 chip=7 kind=6 text='unit: reset since configured' note='UnitReset'
+[accelerometer flat] update=0 faulted(3)=1 any=1 chip=3 kind=4 text='ADXL343: out of range' note='ADXL343Range' roll=-9999.00 tiltCount=0
+[N] setLightReadings(5)=5 setUVReadings(3)=3 setIRReadings(2)=2 setTiltReadings(4)=4 setLightReadings(99)=8
+[N=5,3,2,4] update=1 lightCount=5 uvCount=3 irCount=2 tiltCount=4 lastRequest=2 requestFrom=52
+[N=5,3,2,4] als mean=4200.0000 std=158.1139 sterr=70.7107 median=4200.0000 | lux mean=120.9600 std=4.5537 | uva mean=12355.0000 std=10.0000 median=12355.0000 | temp mean=25.0829 std=0.1172 | roll mean=0.0000 std=0.0000
+[N=5,3,2,4] header: R_u [deg],R_u std [deg],R_u sterr [deg],P_u [deg],P_u std [deg],P_u sterr [deg],UVA_u,UVA_u std,UVA_u sterr,UVB_u,UVB_u std,UVB_u sterr,White_u,White_u std,White_u sterr,Vis_u [lx],Vis_u std [lx],Vis_u sterr [lx],IR_S_u,IR_S_u std,IR_S_u sterr,IR_M_u,IR_M_u std,IR_M_u sterr,PyroT_u [C],PyroT_u std [C],PyroT_u sterr [C],
+[N=5,3,2,4] string: 0.00,0.00,0.00,0.00,0.00,0.00,12355,10.00,5.77,678,0.00,0.00,3000,0.00,0.00,120.96,4.55,2.04,1.25,0.00,0.00,2.50,0.00,0.00,25.08,0.12,0.08,
+[VEML6030 only] update=1 lightCount=5 uvCount=3 uva=12355 lux=120.9600
+[run ALL] header: R_u [deg],P_u [deg],UVA_u,UVB_u,White_u,Vis_u [lx],IR_S_u,IR_M_u,PyroT_u [C], lastRequest=3
+[run ALL] row 0 (48 bytes): 0.00,0.00,12305,678,3000,115.20,1.25,2.50,25.00,
+[run ALL] row 1 (48 bytes): 0.00,0.00,12320,678,3000,115.20,1.25,2.50,25.00,
+[run ALL] row 2 (48 bytes): 0.00,0.00,12335,678,3000,115.20,1.25,2.50,25.00,
+[run ALL] uva count=3 mean=12320.0000 median=12320.0000
+[run ADXL343] header: R_u [deg],P_u [deg], lastRequest=0
+[run ADXL343] row: 0.00,0.00, requestFrom=3
+[run VEML6030] header: White_u,Vis_u [lx],
+[run VEML6030] row: 3000,115.20,
+[dead VEML6030] N=8: update=0 readings taken=1 lightCount=0 lux=-9999.00 note='VEML6030NoACK'
+[cost] requestFrom calls for one getString(): 7
