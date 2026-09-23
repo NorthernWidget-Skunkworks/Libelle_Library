@@ -19,7 +19,7 @@ void setup() {
 void loop() {
     Serial.println(pyro.getString());  // -9999 where a reading failed
     if (pyro.anyFault()) {
-        pyro.printFault(Serial);  // e.g. "VEML6075: no acknowledge"
+        pyro.printReport(Serial);  // e.g. "VEML6075: no acknowledge"
         Serial.println();
     }
     delay(1000);

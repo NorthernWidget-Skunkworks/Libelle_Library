@@ -89,7 +89,7 @@ int main() {
   adxlPresent = false;
   { Libelle s; bool ok = s.begin(); printf("[no accelerometer] begin=%d failure=%s\n", ok, s.beginFailure().c_str());
     String row = s.getString();   // evaluated before the fault getters: printf argument order is unspecified
-    printf("[no accelerometer] string: %s faulted(3)=%d any=%d note='%s'\n", row.c_str(), s.faulted(3), s.anyFault(), s.faultNote().c_str()); }
+    printf("[no accelerometer] string: %s faulted(3)=%d any=%d note='%s'\n", row.c_str(), s.faulted(3), s.anyFault(), s.reportNote().c_str()); }
   adxlPresent = true;
 
   // 6. Faults: the VEML6075 does not acknowledge (status bit 1, pan-fault, latched 0x01); the
@@ -98,19 +98,19 @@ int main() {
   loadStandard();
   { Libelle s; s.begin(); char pb[48];
     onReading = [](TwoWire& w) { w.image[0x20] = 0x83; w.image[0x27] = 0x01; };
-    bool ok = s.updateMeasurements(); BufferPrint bp(pb, sizeof pb); s.printFault(bp);
+    bool ok = s.updateMeasurements(); BufferPrint bp(pb, sizeof pb); s.printReport(bp);
     printf("[VEML6075 no ACK] update=%d faulted(0)=%d faulted(1)=%d faulted(2)=%d any=%d chip=%u kind=%u text='%s' note='%s'\n",
-           ok, s.faulted(0), s.faulted(1), s.faulted(2), s.anyFault(), s.faultChip(), s.faultKind(), pb, s.faultNote().c_str());
+           ok, s.faulted(0), s.faulted(1), s.faulted(2), s.anyFault(), s.reportChip(), s.reportKind(), pb, s.reportNote().c_str());
     printf("[VEML6075 no ACK] string: %s\n", s.getString().c_str());
     onReading = [](TwoWire& w) { w.image[0x20] = 0x89; w.image[0x27] = 0x42; };   // chip 2, kind 2
     String row = s.getString();   // evaluated before the note: printf argument order is unspecified
-    printf("[ADS1115 timeout] string: %s note='%s'\n", row.c_str(), s.faultNote().c_str());
+    printf("[ADS1115 timeout] string: %s note='%s'\n", row.c_str(), s.reportNote().c_str());
     onReading = [](TwoWire& w) { w.image[0x20] = 0x01; w.image[0x27] = 0xE6; };
-    ok = s.updateMeasurements(); BufferPrint bp2(pb, sizeof pb); s.printFault(bp2);
-    printf("[unit reset] update=%d any=%d chip=%u kind=%u text='%s' note='%s'\n", ok, s.anyFault(), s.faultChip(), s.faultKind(), pb, s.faultNote().c_str());
+    ok = s.updateMeasurements(); BufferPrint bp2(pb, sizeof pb); s.printReport(bp2);
+    printf("[unit reset] update=%d any=%d chip=%u kind=%u text='%s' note='%s'\n", ok, s.anyFault(), s.reportChip(), s.reportKind(), pb, s.reportNote().c_str());
     onReading = nullptr; setAccel(0, 0, 0);
-    ok = s.updateMeasurements(); BufferPrint bp3(pb, sizeof pb); s.printFault(bp3);
-    printf("[accelerometer flat] update=%d faulted(3)=%d any=%d chip=%u kind=%u text='%s' note='%s' roll=%.2f tiltCount=%u\n", ok, s.faulted(3), s.anyFault(), s.faultChip(), s.faultKind(), pb, s.faultNote().c_str(), s.getRoll(), s.getTiltCount());
+    ok = s.updateMeasurements(); BufferPrint bp3(pb, sizeof pb); s.printReport(bp3);
+    printf("[accelerometer flat] update=%d faulted(3)=%d any=%d chip=%u kind=%u text='%s' note='%s' roll=%.2f tiltCount=%u\n", ok, s.faulted(3), s.anyFault(), s.reportChip(), s.reportKind(), pb, s.reportNote().c_str(), s.getRoll(), s.getTiltCount());
     setAccel(0, 0, 256); }
 
   // 7. N readings with statistics: ALS steps through five values (lux follows), UVA through
@@ -160,7 +160,7 @@ int main() {
   { Libelle s; s.begin(); int k = 0;
     onReading = [&](TwoWire& w) { k++; w.image[0x20] = 0x85; w.image[0x27] = 0x21; };   // chip 1, kind 1
     s.setLightReadings(8); bool ok = s.updateMeasurements(Libelle::VEML6030);
-    printf("[dead VEML6030] N=8: update=%d readings taken=%d lightCount=%u lux=%.2f note='%s'\n", ok, k, s.getLightCount(), s.getLux(), s.faultNote().c_str());
+    printf("[dead VEML6030] N=8: update=%d readings taken=%d lightCount=%u lux=%.2f note='%s'\n", ok, k, s.getLightCount(), s.getLux(), s.reportNote().c_str());
     onReading = nullptr; }
 
   // 10. Cost of one getString() with one reading of everything: bridge transactions plus three accelerometer axes.

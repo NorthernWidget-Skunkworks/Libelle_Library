@@ -442,23 +442,23 @@ size_t Libelle::logReading(Print& out)
 
 bool    Libelle::faulted(uint8_t chip) { return (chip == 3) ? _accelFault : _dev.faulted(chip); } // chip 3, the ADXL343, is the library's own on hardware v1
 bool    Libelle::anyFault()            { return _dev.anyFault() || _accelFault; }
-uint8_t Libelle::faultChip()           { return fault().chip(); }
-uint8_t Libelle::faultKind()           { return fault().kind(); }
+uint8_t Libelle::reportChip()           { return report().chip(); }
+uint8_t Libelle::reportKind()           { return report().kind(); }
 uint8_t Libelle::getHardwareMajor()    { return _dev.hardwareMajor(); }
 uint8_t Libelle::getHardwareMinor()    { return _dev.hardwareMinor(); }
 uint8_t Libelle::getFirmwareVersion()  { return _dev.firmwareVersion(); }
 
-NW_Fault Libelle::fault()
+NW_Report Libelle::report()
 {
-  // The bridge's latched fault first. Hardware v1: the accelerometer is the
+  // The bridge's report first. Hardware v1: the accelerometer is the
   // library's to judge; no acknowledge at begin() is kind 1, three identical
   // axes afterwards kind 4 (out of range).
-  if(_dev.faultKind() == 0 && _accelFault) {
-    NW_Fault f;
+  if(_dev.reportKind() == 0 && _accelFault) {
+    NW_Report f;
     f.code = (3 << 5) | (_accelOk ? 4 : 1);
     return f;
   }
-  return _dev.fault();
+  return _dev.report();
 }
 
 String Libelle::beginFailure()
@@ -467,18 +467,18 @@ String Libelle::beginFailure()
   return _dev.beginFailure();
 }
 
-// The chip names are Libelle's own (the spec's chip table); NW_Fault prints the rest.
+// The chip names are Libelle's own (the spec's chip table); NW_Report prints the rest.
 static const char* const chips[] = {"VEML6075", "VEML6030", "ADS1115", "ADXL343"};
 
-size_t Libelle::printFault(Print& out)
+size_t Libelle::printReport(Print& out)
 {
-  return fault().print(out, chips, 4);
+  return report().print(out, chips, 4);
 }
 
-String Libelle::faultNote()
+String Libelle::reportNote()
 {
   // One word for a data-table note: the chip, then the kind ("VEML6075NoACK").
-  return fault().note(chips, 4);
+  return report().note(chips, 4);
 }
 
 void Libelle::PrintAllRegs()

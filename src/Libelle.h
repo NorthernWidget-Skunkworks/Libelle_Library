@@ -22,7 +22,7 @@ Distributed as-is; no warranty is given.
 #include <Arduino.h>
 #include "Wire.h"
 #include "math.h"
-#include <NW_Core.h>   // NW_Core: NW_Device (Schema 1 protocol), NW_Readings, NW_Fault
+#include <NW_Core.h>   // NW_Core: NW_Device (Schema 1 protocol), NW_Readings, NW_Report
 
 /// Lowest firmware patch (Page 0 byte 0x0A) this library accepts: patch 1
 /// brought Schema 1 (Page 0, Block 0 handshake, data at 0x28-0x3D).
@@ -215,19 +215,19 @@ class Libelle
 		/** @brief End a run of readings. */
 		void endReadings();
 
-		// --- Faults (status byte, live; fault byte, latched) ---
+		// --- Faults (status byte, live; Report register, latched) ---
 		/** @brief True if the given chip (0 VEML6075, 1 VEML6030, 2 ADS1115, 3 ADXL343) was faulted in the last reading. The accelerometer fault is the library's own on hardware v1. */
 		bool faulted(uint8_t chip);
 		/** @brief True if any chip was faulted in the last reading. */
 		bool anyFault();
-		/** @brief Chip index of the latched fault (7 the unit); meaningful when faultKind() != 0. */
-		uint8_t faultChip();
-		/** @brief Kind of the latched fault, per the spec's table (1 no acknowledge, 2 timeout, 3 checksum, 6 reset since configured, ...). */
-		uint8_t faultKind();
-		/** @brief Print the latched fault as text, e.g. "VEML6075: no acknowledge"; "none" when there is no fault. */
-		size_t printFault(Print& out);
-		/** @brief The latched fault as one word for a note column: "VEML6075NoACK", "UnitReset"; "UnitNone" when none. */
-		String faultNote();
+		/** @brief Chip index of the report (7 the unit); meaningful when reportKind() != 0. */
+		uint8_t reportChip();
+		/** @brief Kind of the report, per the spec's table (1 no acknowledge, 2 timeout, 3 checksum, 6 reset since configured, ...). */
+		uint8_t reportKind();
+		/** @brief Print the report as text, e.g. "VEML6075: no acknowledge"; "none" when there is no fault. */
+		size_t printReport(Print& out);
+		/** @brief The report as one word for a note column: "VEML6075NoACK", "UnitReset"; "UnitNone" when none. */
+		String reportNote();
 		/** @brief Why the last begin() refused, as one word: "NoACK", "NotSchema1", "WrongName", "OldFirmware", "NoAccel"; "None" after success. */
 		String beginFailure();
 		uint8_t getHardwareMajor();
@@ -280,7 +280,7 @@ class Libelle
 		bool readData();             // One 22-byte read of the three bridge chips, appended
 		void resetReadings(uint8_t component);
 		void summarise(uint8_t component); // Means into the single-value fields, LIBELLE_ERROR when no reading
-		NW_Fault fault();            // The bridge's latched fault, or the library's own for the accelerometer
+		NW_Report report();           // The bridge's report, or the library's own for the accelerometer
 		String column(const char* name, const char* unit, bool stats); // "R_u [deg]," plus std and sterr columns
 		float TempConvert(float V, float Vcc, float R, float A, float B, float C, float D, float R25);
 		void PrintAllRegs();
