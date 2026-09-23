@@ -31,18 +31,18 @@ static void installBus(uint8_t bridgeAddress) {
 }
 
 // Schema 1 register image: Page 0 as NW-Provision writes it (with the firmware's
-// patch at 0x0A), Page 1 with a complete reading (Libelle appendix: VEML6030 ALS,
-// white and lux multiplier uint16 at 0x28; VEML6075 UVA and UVB int32 at 0x30;
-// ADS1115 IR short, IR mid and thermistor uint16 at 0x38), little-endian.
+// patch at 0x0A), Page 1 (calibration) zero, Page 2 with a complete reading (Libelle
+// appendix: VEML6030 ALS, white and lux multiplier uint16 at 0x48; VEML6075 UVA and
+// UVB int32 at 0x50; ADS1115 IR short, IR mid and thermistor uint16 at 0x58), little-endian.
 static void put16(uint8_t* r, uint8_t at, uint16_t v) { r[at] = v & 0xFF; r[at + 1] = v >> 8; }
 static void put32(uint8_t* r, uint8_t at, int32_t v) { for (int i = 0; i < 4; i++) r[at + i] = (v >> (8 * i)) & 0xFF; }
 static void loadImage(int32_t uva, int32_t uvb, uint16_t als, uint16_t white, uint16_t luxMul,
                       uint16_t irMid, uint16_t irShort, uint16_t therm, uint8_t fwPatch = 1, uint8_t schema = 0x01) {
   uint8_t* r = Wire.image;
   nwLoadPage0(r, "Libelle", Wire.deviceAddress, 1, fwPatch, schema);   // Page 0 and Block 0, HW 0.1
-  put16(r, 0x28, als); put16(r, 0x2A, white); put16(r, 0x2C, luxMul);
-  put32(r, 0x30, uva); put32(r, 0x34, uvb);
-  put16(r, 0x38, irShort); put16(r, 0x3A, irMid); put16(r, 0x3C, therm);
+  put16(r, 0x48, als); put16(r, 0x4A, white); put16(r, 0x4C, luxMul);
+  put32(r, 0x50, uva); put32(r, 0x54, uvb);
+  put16(r, 0x58, irShort); put16(r, 0x5A, irMid); put16(r, 0x5C, therm);
 }
 static void loadStandard() { loadImage(12345, 678, 4000, 3000, 8, 20000, 10000, 13200); }
 
@@ -97,15 +97,15 @@ int main() {
   //    status, then an accelerometer whose three axes read the same (the library's own fault).
   loadStandard();
   { Libelle s; s.begin(); char pb[48];
-    onReading = [](TwoWire& w) { w.image[0x20] = 0x83; w.image[0x27] = 0x01; };
+    onReading = [](TwoWire& w) { w.image[0x40] = 0x83; w.image[0x47] = 0x01; };
     bool ok = s.updateMeasurements(); BufferPrint bp(pb, sizeof pb); s.printReport(bp);
     printf("[VEML6075 no ACK] update=%d faulted(0)=%d faulted(1)=%d faulted(2)=%d any=%d chip=%u kind=%u text='%s' note='%s'\n",
            ok, s.faulted(0), s.faulted(1), s.faulted(2), s.anyFault(), s.reportChip(), s.reportKind(), pb, s.reportNote().c_str());
     printf("[VEML6075 no ACK] string: %s\n", s.getString().c_str());
-    onReading = [](TwoWire& w) { w.image[0x20] = 0x89; w.image[0x27] = 0x42; };   // chip 2, kind 2
+    onReading = [](TwoWire& w) { w.image[0x40] = 0x89; w.image[0x47] = 0x42; };   // chip 2, kind 2
     String row = s.getString();   // evaluated before the note: printf argument order is unspecified
     printf("[ADS1115 timeout] string: %s note='%s'\n", row.c_str(), s.reportNote().c_str());
-    onReading = [](TwoWire& w) { w.image[0x20] = 0x01; w.image[0x27] = 0xE6; };
+    onReading = [](TwoWire& w) { w.image[0x40] = 0x01; w.image[0x47] = 0xE6; };
     ok = s.updateMeasurements(); BufferPrint bp2(pb, sizeof pb); s.printReport(bp2);
     printf("[unit reset] update=%d any=%d chip=%u kind=%u text='%s' note='%s'\n", ok, s.anyFault(), s.reportChip(), s.reportKind(), pb, s.reportNote().c_str());
     onReading = nullptr; setAccel(0, 0, 0);
@@ -119,9 +119,9 @@ int main() {
   loadStandard();
   { Libelle s; s.begin(); int k = 0;
     onReading = [&](TwoWire& w) { k++;
-      put16(w.image, 0x28, 4000 + 100 * (k % 5));
-      put32(w.image, 0x30, 12345 + 10 * (k % 3));
-      put16(w.image, 0x3C, 13200 + 40 * (k % 2)); };
+      put16(w.image, 0x48, 4000 + 100 * (k % 5));
+      put32(w.image, 0x50, 12345 + 10 * (k % 3));
+      put16(w.image, 0x5C, 13200 + 40 * (k % 2)); };
     printf("[N] setLightReadings(5)=%u setUVReadings(3)=%u setIRReadings(2)=%u setTiltReadings(4)=%u setLightReadings(99)=%u\n",
            s.setLightReadings(5), s.setUVReadings(3), s.setIRReadings(2), s.setTiltReadings(4), s.setLightReadings(99));
     s.setLightReadings(5); s.setLightStats(true); s.setUVStats(true); s.setIRStats(true); s.setTiltStats(true);
@@ -141,7 +141,7 @@ int main() {
   //    alone (nothing written to the bridge), then the VEML6030 alone.
   loadStandard();
   { Libelle s; s.begin(); int k = 0; char pb[160];
-    onReading = [&](TwoWire& w) { k++; put32(w.image, 0x30, 12300 + 5 * k); };
+    onReading = [&](TwoWire& w) { k++; put32(w.image, 0x50, 12300 + 5 * k); };
     lastRequest = 0; s.beginReadings(Libelle::ALL, 3);
     BufferPrint bh(pb, sizeof pb); s.printHeader(bh); printf("[run ALL] header: %s lastRequest=%u\n", pb, lastRequest);
     for (int i = 0; i < 3; i++) { BufferPrint bp(pb, sizeof pb); size_t n = s.logReading(bp); printf("[run ALL] row %d (%zu bytes): %s\n", i, n, pb); }
@@ -158,7 +158,7 @@ int main() {
   // 9. A dead VEML6030 (no acknowledge on the first reading) stops its batch of 8.
   loadStandard();
   { Libelle s; s.begin(); int k = 0;
-    onReading = [&](TwoWire& w) { k++; w.image[0x20] = 0x85; w.image[0x27] = 0x21; };   // chip 1, kind 1
+    onReading = [&](TwoWire& w) { k++; w.image[0x40] = 0x85; w.image[0x47] = 0x21; };   // chip 1, kind 1
     s.setLightReadings(8); bool ok = s.updateMeasurements(Libelle::VEML6030);
     printf("[dead VEML6030] N=8: update=%d readings taken=%d lightCount=%u lux=%.2f note='%s'\n", ok, k, s.getLightCount(), s.getLux(), s.reportNote().c_str());
     onReading = nullptr; }
