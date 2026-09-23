@@ -225,7 +225,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc" aria-label="Table of contents">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#classes">Classes</a></li><li><a href="#types">Types</a></li><li><a href="#attributes">Attributes</a></li><li><a href="#defines">Defines</a></li><li><a href="#types-documentation">Types Documentation</a><ul><li><a href="#enum-orientation">enum Orientation</a></li></ul></li><li><a href="#attributes-documentation">Attributes Documentation</a><ul><li><a href="#variable-libelle_error">variable LIBELLE_ERROR</a></li></ul></li><li><a href="#macros-documentation">Macros Documentation</a><ul><li><a href="#define-libelle_fw_min_patch">define LIBELLE_FW_MIN_PATCH</a></li><li><a href="#define-libelle_uv_capacity">define LIBELLE_UV_CAPACITY</a></li><li><a href="#define-libelle_light_capacity">define LIBELLE_LIGHT_CAPACITY</a></li><li><a href="#define-libelle_ir_capacity">define LIBELLE_IR_CAPACITY</a></li><li><a href="#define-libelle_tilt_capacity">define LIBELLE_TILT_CAPACITY</a></li></ul></li><li><a href="#source-code">Source code</a></li></ul>
+              <ul class="toc__menu"><li><a href="#classes">Classes</a></li><li><a href="#types">Types</a></li><li><a href="#attributes">Attributes</a></li><li><a href="#defines">Defines</a></li><li><a href="#types-documentation">Types Documentation</a><ul><li><a href="#enum-orientation">enum Orientation</a></li></ul></li><li><a href="#attributes-documentation">Attributes Documentation</a><ul><li><a href="#variable-libelle_error">variable LIBELLE_ERROR</a></li></ul></li><li><a href="#macros-documentation">Macros Documentation</a><ul><li><a href="#define-libelle_fw_min_patch">define LIBELLE_FW_MIN_PATCH</a></li><li><a href="#define-libelle_library_version">define LIBELLE_LIBRARY_VERSION</a></li><li><a href="#define-libelle_library_commit">define LIBELLE_LIBRARY_COMMIT</a></li><li><a href="#define-libelle_uv_capacity">define LIBELLE_UV_CAPACITY</a></li><li><a href="#define-libelle_light_capacity">define LIBELLE_LIGHT_CAPACITY</a></li><li><a href="#define-libelle_ir_capacity">define LIBELLE_IR_CAPACITY</a></li><li><a href="#define-libelle_tilt_capacity">define LIBELLE_TILT_CAPACITY</a></li></ul></li><li><a href="#source-code">Source code</a></li></ul>
             </nav>
           </aside>
         
@@ -296,6 +296,14 @@
     </tr>
     <tr>
       <td> </td>
+      <td><strong><a href="/Libelle_Library/Files/Libelle_8h/#define-libelle-library-version">LIBELLE_LIBRARY_VERSION</a></strong></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><strong><a href="/Libelle_Library/Files/Libelle_8h/#define-libelle-library-commit">LIBELLE_LIBRARY_COMMIT</a></strong></td>
+    </tr>
+    <tr>
+      <td> </td>
       <td><strong><a href="/Libelle_Library/Files/Libelle_8h/#define-libelle-uv-capacity">LIBELLE_UV_CAPACITY</a></strong></td>
     </tr>
     <tr>
@@ -357,6 +365,16 @@
 
 <p>Lowest firmware patch (Page 0 byte 0x0A) this library accepts: patch 1 brought Schema 1 (Page 0, Block 0 handshake, data at 0x48-0x5D).</p>
 
+<h3 id="define-libelle_library_version">define LIBELLE_LIBRARY_VERSION</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define LIBELLE_LIBRARY_VERSION "1.0.0"
+</span></code></pre></div></div>
+
+<h3 id="define-libelle_library_commit">define LIBELLE_LIBRARY_COMMIT</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define LIBELLE_LIBRARY_COMMIT ""
+</span></code></pre></div></div>
+
 <h3 id="define-libelle_uv_capacity">define LIBELLE_UV_CAPACITY</h3>
 
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define LIBELLE_UV_CAPACITY 8
@@ -406,6 +424,14 @@ Distributed as-is; no warranty is given.
 #include</span> <span class="cpf">&lt;NW_Core.h&gt;</span><span class="c1">   // NW_Core: NW_Device (Schema 1 protocol), NW_Readings, NW_Report</span><span class="cp">
 </span>
 <span class="cp">#define LIBELLE_FW_MIN_PATCH 1
+</span>
+<span class="c1">// Build identity: this library's version (held equal to library.properties by</span>
+<span class="c1">// NW-Tests/version_check.py) and its build commit, set by the NW-Build wrapper from</span>
+<span class="c1">// git and blank in an Arduino IDE build. Both go into a logger's status file.</span>
+<span class="cp">#define LIBELLE_LIBRARY_VERSION "1.0.0"
+#ifndef LIBELLE_LIBRARY_COMMIT
+#define LIBELLE_LIBRARY_COMMIT ""
+#endif
 </span>
 <span class="c1">// Readings per updateMeasurements() are kept in static arrays of this</span>
 <span class="c1">// capacity (one per chip group; no heap); set&lt;Group&gt;Readings(n) clamps to it.</span>
@@ -574,7 +600,7 @@ Distributed as-is; no warranty is given.
 
 <hr />
 
-<p>Updated on 2026-09-23 at 20:56:42 +0000</p>
+<p>Updated on 2026-09-23 at 22:43:23 +0000</p>
 
         
       </section>
