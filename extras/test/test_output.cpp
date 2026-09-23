@@ -167,6 +167,10 @@ int main() {
   loadStandard();
   { Libelle s; s.begin(); unsigned t0 = Wire.transactions; s.getString(); printf("[cost] requestFrom calls for one getString(): %u\n", Wire.transactions - t0); }
 
+  // 11. The status line for a logger's status file.
+  loadStandard();
+  { Libelle s; s.begin(); s.updateMeasurements(); char sb[260]; BufferPrint sp(sb, sizeof sb); size_t k = s.printStatus(sp); printf("[status] %zu bytes: %s\n", k, sb); }
+
   fprintf(stderr, "bus transactions total: %u\n", Wire.transactions);   // metric, not output
   return 0;
 }

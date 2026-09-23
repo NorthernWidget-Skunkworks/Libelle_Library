@@ -475,6 +475,11 @@ size_t Libelle::printReport(Print& out)
   return report().print(out, chips, 4);
 }
 
+size_t Libelle::printStatus(Print& out)
+{
+  return _dev.printSnapshot(out, chips, 4);
+}
+
 String Libelle::reportNote()
 {
   // One word for a data-table note: the chip, then the kind ("VEML6075NoACK").
